@@ -1,0 +1,151 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .video-box
+2. .video-box-list
+-------------------------------------------------------------------*/
+/*-------------------
+    1. VIDEO BOX
+-------------------*/
+.video-box {
+  border-radius: 12px;
+  box-shadow: $shadow-light;
+
+  &.small {
+    .video-box-cover {
+      &:hover {
+        .play-button {
+          transform: translate(0, -20px);
+        }
+
+        .video-box-info {
+          .video-box-title,
+          .video-box-text {
+            transform: translate(0, 0);
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      &::after {
+        border-radius: 12px;
+      }
+
+      .video-box-cover-image {
+        height: 128px;
+        border-radius: 12px;
+      }
+
+      .play-button {
+        top: 40px;
+        transition: transform .3s ease-in-out;
+      }
+
+      .video-box-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        padding: 0 16px 14px;
+        background-color: transparent;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+
+        .video-box-title,
+        .video-box-text {
+          color: $white;
+          transform: translate(20px, 0);
+          opacity: 0;
+          visibility: hidden;
+          transition: transform .3s ease-in-out, visibility .3s ease-in-out, opacity .3s ease-in-out;
+        }
+
+        .video-box-title {
+          font-size: $fs-12;
+        }
+
+        .video-box-text {
+          margin-top: 4px;
+          transition-delay: .15s;
+        }
+      }
+    }
+  }
+
+  .video-box-cover {
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      background-color: rgba(21, 21, 31, .6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+    }
+
+    .video-box-cover-image {
+      height: 160px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 56px;
+      left: 50%;
+      margin-left: -23px;
+      z-index: 2;
+    }
+  }
+
+  .video-box-info {
+    padding: 22px 28px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: $color-box-background;
+
+    .video-box-title {
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+    }
+  
+    .video-box-text {
+      margin-top: 6px;
+      font-size: $fs-12;
+      font-weight: $weight-medium;
+    } 
+  }
+}
+
+/*-----------------------
+    2. VIDEO BOX LIST
+-----------------------*/
+.video-box-list {
+  .video-box {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

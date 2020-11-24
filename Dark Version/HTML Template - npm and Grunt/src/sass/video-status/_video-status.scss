@@ -1,0 +1,131 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .video-status
+-------------------------------------------------------------------*/
+/*----------------------
+    1. VIDEO STATUS
+----------------------*/
+.video-status {
+  display: block;
+  border-radius: 12px;
+  box-shadow: $shadow-alt-2;
+
+  &.small {
+    padding-left: 180px;
+    position: relative;
+
+    .video-status-image {
+      width: 180px;
+      height: 180px;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 12px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .video-status-info {
+      height: 180px;
+      padding: 26px 28px 22px;
+      border-top-right-radius: 12px;
+      border-bottom-left-radius: 0;
+
+      .video-status-title {
+        margin-top: 0;
+        font-size: $fs-16;
+      }
+  
+      .video-status-text {
+        margin-top: 10px;
+      }
+  
+      .video-status-meta {
+        margin-top: 22px;
+      }
+    }
+  }
+
+  .video-status-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    &.mobile {
+      display: none;
+    }
+  }
+
+  .video-status-info {
+    padding: 22px 28px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: $color-box-background-alt;
+
+    .video-status-meta {
+      color: $color-video-status-meta;
+      font-size: $fs-11;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+    }
+  
+    .video-status-title {
+      margin-top: 12px;
+      font-size: $fs-18;
+      font-weight: $weight-medium;
+
+      .bold {
+        font-weight: $weight-bold;
+      }
+
+      .highlighted {
+        color: $color-primary-dark;
+        font-weight: $weight-bold;
+      }
+    }
+  
+    .video-status-text {
+      margin-top: 2px;
+      color: $color-text-alt;
+      @include paragraph();
+    }
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 680px) {
+  .video-status {
+    &.small {
+      padding-left: 0;
+
+      .video-status-image {
+        display: none;
+        width: 100%;
+        height: auto;
+        border-top-right-radius: 12px;
+        border-bottom-left-radius: 0;
+        position: static;
+  
+        &.mobile {
+          display: block;
+        }
+      }
+
+      .video-status-info {
+        height: auto;
+        padding: 22px 28px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        border-top-right-radius: 0;
+  
+        .video-status-title {
+          margin-top: 12px;
+          font-size: $fs-18;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .progress-stat-wrap
+2. .progress-stat
+-------------------------------------------------------------------*/
+/*----------------------------
+    1. PROGRESS STAT WRAP
+----------------------------*/
+.progress-stat-wrap {
+  padding-right: 56px;
+  position: relative;
+
+  .progress-stat {
+    .bar-progress-wrap {
+      position: absolute;
+      top: -5px;
+      right: 0;
+  
+      &:first-child,
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+/*------------------------
+    2. PROGRESS STAT
+------------------------*/
+.progress-stat {
+  &.small {
+    width: 178px;
+  }
+  
+  .bar-progress-wrap {
+    position: relative;
+    
+    &:first-child {
+      margin-bottom: 6px;
+    }
+
+    &.big {
+      margin-bottom: 20px;
+    }
+
+    &.medium {
+      &:first-child {
+        margin-bottom: 14px;
+      }
+    }
+
+    &.small {
+      &:last-child {
+        margin-top: 24px;
+      }
+    }
+
+    &:last-child {
+      margin-top: 28px;
+    }
+    
+    .bar-progress-info {
+      display: flex;
+      justify-content: space-between;
+      color: $white;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+
+      &.progress-with-text {
+        font-size: $fs-20;
+        font-weight: $weight-bold;
+
+        .bar-progress-unit {
+          margin-right: 2px;
+        }
+
+        .light {
+          font-size: $fs-16;
+          font-weight: $weight-medium;
+          text-transform: none;
+        }
+      }
+
+      &.negative {
+        color: $color-text;
+      }
+
+      &.start {
+        justify-content: flex-start;
+
+        .bar-progress-text {
+          margin-right: 4px;
+        }
+      }
+
+      &.center {
+        justify-content: center;
+      }
+
+      &.regular {
+        text-transform: none;
+      }
+
+      &.medium {
+        font-size: $fs-14;
+      }
+
+      .light {
+        margin-right: 4px;
+        color: $color-text-alt-2;
+      }
+    }
+
+    .bar-progress-text {
+      &.no-space {
+        .bar-progress-unit {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .bar-progress-unit {
+      margin-left: 3px;
+      text-transform: uppercase;
+    }
+  }
+
+  .progress-stat-info {
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 8px;
+    right: 0;
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 680px) {
+  .progress-stat {
+    .progress-stat-info {
+      display: none;
+    }
+  }
+}

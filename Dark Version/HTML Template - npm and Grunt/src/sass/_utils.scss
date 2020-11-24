@@ -1,0 +1,5262 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .lined-text
+2. .social-links
+3. .social-link
+4. .tab-switch
+5. .tab-switch-button
+6. .action-request-list
+7. .action-request
+8. .burger-icon
+9. .action-list
+10. .action-item
+11. .user-stats
+12. .user-stat
+13. .badge-list
+14. .badge-item
+15. .tag-list
+16. .tag-item
+17. .xm-tooltip-text
+18. .user-short-description
+19. .slider-control
+20. .slider-roster
+21. .slider-roster-item
+22. .tag-sticker
+23. .text-sticker
+24. .date-sticker
+25. .decorated-text
+26. .simple-dropdown
+27. .paragraph
+28. .information-line-list
+29. .information-line
+30. .information-block-list
+31. .information-block
+32. .timeline-information-list
+33. .timeline-information
+34. .rating-list
+35. .rating
+36. .filters
+37. .filter-tabs
+38. .filter-tab
+39. .view-actions
+40. .view-action
+41. .tweets
+42. .tweet
+43. .play-button
+44. .iframe-wrap
+45. .popup-video
+46. .popup-picture
+47. .popup-event
+48. .popup-close-button
+49. .decorated-feature-list
+50. .decorated-feature
+51. .meta-line
+52. .reaction-options
+53. .post-options
+54. .post-option
+55. .post-settings
+56. .slider-line
+57. .stat-block-list
+58. .stat-block
+59. .achievement-status-list
+60. .achievement-status
+61. .page-loader
+62. .reaction-count-list
+63. .reaction-count
+64. .upload-item-list
+65. .upload-item
+66. .simple-accordion-list
+67. .simple-accordion
+68. .week-box
+69. .week-box-item
+70. .forum-category
+71. .discussion-preview
+72. .page-items
+73. .page-item
+74. .quick-post
+75. .option-items
+76. .option-item
+77. .stats-box
+78. .stats-box-slider
+79. .reaction-stats
+80. .reaction-stat
+81. .simple-tab-items
+82. .simple-tab-item
+83. .banner-promo
+84. .poll-box
+85. .poll-results
+86. .poll-result
+87. .picture-collage
+88. .quote-box
+89. .stats-decoration
+90. .percentage-diff
+91. .percentage-diff-icon-wrap
+92. .sidebar-box
+93. .sidebar-menu
+94. .sidebar-menu-item
+95. .sidebar-menu-header
+96. .sidebar-menu-body
+97. .price-title
+98. .promo-line
+99. .tab-box
+100. .bullet-item-list
+101. .bullet-item
+102. .ordered-item-list
+103. .ordered-item
+104. .profile-stats
+105. .featured-stat-list
+106. .featured-stat
+107. .featured-stat-box
+108. .achievement-box
+109. .level-progress-box
+110. .level-progress-badge
+111. .exp-line-list
+112. .exp-line
+113. .account-stat-box
+114. .reference-item-list
+115. .reference-item
+116. .reference-bullet
+117. .country-stat-list
+118. .country-stat
+119. .full-width-image
+120. .totals-line-list
+121. .totals-line
+122. .upload-box
+123. .draggable-items
+124. .draggable-item
+125. .switch-option-list
+126. .switch-option
+127. .notification-box-list
+128. .notification-box
+129. .create-entity-box
+130. .earning-stat-box
+131. .status-info
+-------------------------------------------------------------------*/
+/*--------------------
+    1. LINED TEXT
+--------------------*/
+.lined-text {
+  font-size: $fs-14;
+  font-weight: $weight-bold;
+  text-align: center;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 70px;
+    height: 1px;
+    background-color: $color-divider;
+    position: absolute;
+    top: 7px;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+/*-----------------------
+    2. SOCIAL LINKS
+-----------------------*/
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &.align-left {
+    justify-content: flex-start;
+  }
+
+  &.small {
+    .social-link {
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.vertical {
+    flex-direction: column;
+
+    .social-link {
+      margin: 0 0 16px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &.multiline {
+    margin-top: -12px;
+
+    .social-link {
+      margin: 12px 12px 0 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .social-link {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/*-----------------------
+    3. SOCIAL LINK
+-----------------------*/
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: transform .2s ease-in-out;
+
+  &.small {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+
+    .social-link-icon {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &.no-hover {
+    &:hover {
+      transform: translate(0, 0);
+    }
+  }
+
+  &:hover {
+    transform: translate(0, -4px);
+  }
+
+  &.facebook {
+    background-color: $color-facebook;
+  }
+
+  &.twitter {
+    background-color: $color-twitter;
+  }
+  
+  &.twitch {
+    background-color: $color-twitch;
+  }
+
+  &.youtube {
+    background-color: $color-youtube;
+  }
+
+  &.instagram {
+    background-color: $color-instagram;
+  }
+
+  &.patreon {
+    background-color: $color-patreon;
+  }
+
+  &.discord {
+    background-color: $color-discord;
+  }
+
+  &.google {
+    background-color: $color-google;
+  }
+
+  &.behance {
+    background-color: $color-behance;
+  }
+
+  &.deviantart {
+    background-color: $color-deviantart;
+  }
+
+  &.artstation {
+    background-color: $color-artstation;
+  }
+
+  &.dribbble {
+    background-color: $color-dribbble;
+  }
+
+  &.void {
+    background-color: $white;
+    box-shadow: $shadow-dark-alt;
+
+    &.facebook {
+      .icon-facebook {
+        fill: $color-facebook;
+      }
+    }
+
+    &.twitter {
+      .icon-twitter {
+        fill: $color-twitter;
+      }
+    }
+  }
+}
+
+/*-----------------------
+    4. TAB SWITCH
+-----------------------*/
+.tab-switch {
+  display: flex;
+  justify-content: center;
+
+  .tab-switch-button {
+    &:first-child {
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+  }
+}
+
+/*---------------------------
+    5. TAB SWITCH BUTTON
+---------------------------*/
+.tab-switch-button {
+  width: 180px;
+  height: 54px;
+  border: 1px solid $color-tab-switch-border;
+  color: $color-tab-switch-text;
+  font-size: $fs-16;
+  font-weight: $weight-bold;
+  line-height: 54px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+
+  &.active {
+    color: $color-tab-switch-active-text;
+    background-color: $color-tab-switch-active-background;
+    cursor: auto;
+  }
+}
+
+/*-----------------------------
+    6. ACTION REQUEST LIST
+-----------------------------*/
+.action-request-list {
+  display: flex;
+
+  .action-request {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/*------------------------
+    7. ACTION REQUEST
+------------------------*/
+.action-request {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+  color: $gray;
+  font-size: $fs-12;
+  font-weight: $weight-bold;
+  cursor: pointer;
+  transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
+
+  &.with-text {
+    width: auto;
+    padding: 0 32px 0 22px;
+
+    .action-request-icon {
+      margin-right: 12px;
+    }
+  }
+
+  &:hover {
+    color: $white;
+
+    .action-request-icon {
+      fill: $white;
+      opacity: 1;
+    }
+  }
+
+  &.accept {
+    &:hover {
+      background-color: $color-secondary;
+      border-color: $color-secondary;
+    }
+  }
+
+  &.decline {
+    &:hover {
+      background-color: $red-dark;
+      border-color: $red-dark;
+    }
+  }
+
+  .action-request-icon {
+    fill: $color-icon;
+    opacity: .6;
+    transition: fill .2s ease-in-out, opacity .2s ease-in-out;
+  }
+}
+
+/*-----------------------------
+    8. BURGER ICON
+-----------------------------*/
+.burger-icon {
+  width: 20px;
+  height: 14px;
+  position: relative;
+
+  &.open {
+    .burger-icon-bar {
+      &:nth-child(1) {
+        width: 100%;
+      }
+  
+      &:nth-child(2) {
+        width: 14px;
+      }
+  
+      &:nth-child(3) {
+        width: 10px;
+      }
+    }
+  }
+
+  &.inverted {
+    .burger-icon-bar {
+      left: 0;
+
+      &:nth-child(1) {
+        width: 100%;
+      }
+  
+      &:nth-child(2) {
+        width: 14px;
+      }
+  
+      &:nth-child(3) {
+        width: 10px;
+      }
+    }
+  }
+
+  .burger-icon-bar {
+    height: 2px;
+    background-color: $white;
+    position: absolute;
+    right: 0;
+    transition: width .4s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0;
+      width: 10px;
+    }
+
+    &:nth-child(2) {
+      top: 6px;
+      width: 14px;
+    }
+
+    &:nth-child(3) {
+      top: 12px;
+      width: 100%;
+    }
+  }
+}
+
+/*-----------------------------
+    9. ACTION LIST
+-----------------------------*/
+.action-list {
+  display: flex;
+  padding: 0 18px;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: '';
+    width: 1px;
+    height: 32px;
+    background-color: $color-border;
+    position: absolute;
+  }
+
+  &::after {
+    left: 0;
+  }
+
+  &::before {
+    right: 0;
+  }
+
+  &.dark {
+    &::after,
+    &::before {
+      background-color: $color-border-dark;
+    }
+
+    .action-list-item {
+      &:hover,
+      &.active,
+      &.unread {
+        .action-list-item-icon {
+          fill: $white;
+        }
+      }
+
+      .action-list-item-icon {
+        fill: $color-icon-dark;
+      }
+    }
+  }
+
+  .action-list-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 14px;
+    cursor: pointer;
+
+    &:hover,
+    &.active,
+    &.unread {
+      .action-list-item-icon {
+        fill: $black;
+      }
+    }
+
+    &.unread {
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $color-primary-light;
+        position: absolute;
+        top: 26px;
+        right: 10px;
+      }
+    }
+
+    .action-list-item-icon {
+      fill: $color-icon;
+      transition: fill .3s ease-in-out;
+    }
+  }
+}
+
+/*-----------------------------
+    10. ACTION ITEM
+-----------------------------*/
+.action-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .action-item-icon {
+    fill: $gray;
+  }
+
+  &.dark {
+    .action-item-icon {
+      fill: $white;
+    }
+  }
+}
+
+/*-----------------------------
+    11. USER STATS
+-----------------------------*/
+.user-stats {
+  display: flex;
+  justify-content: center;
+
+  .user-stat {
+    position: relative;
+
+    &.big {
+      &::after {
+        top: 8px;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background-color: $color-divider;
+      position: absolute;
+      top: 6px;
+      right: 0;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+/*-----------------------------
+    12. USER STAT
+-----------------------------*/
+.user-stat {
+  padding: 0 24px;
+
+  &.big {
+    padding: 0 30px;
+
+    .reference-bullet {
+      margin: 0 auto 20px;
+    }
+
+    .user-stat-title {
+      font-size: $fs-22;
+    }
+
+    .user-stat-text {
+      font-size: $fs-12;
+    }
+  }
+
+  .user-stat-title,
+  .user-stat-text {
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .user-stat-title {
+    font-size: $fs-14;
+
+    .user-stat-title-icon {
+      &.positive {
+        fill: $color-primary;
+      }
+
+      &.negative {
+        fill: $red;
+      }
+    }
+  }
+
+  .user-stat-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & + {
+      .user-stat-text {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .user-stat-image {
+    display: block;
+    width: 24px;
+    height: 16px;
+
+    & + {
+      .user-stat-text {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .user-stat-text {
+    margin-top: 10px;
+    color: $color-text-alt-2;
+    font-size: $fs-11;
+  }
+
+  .rating-list {
+    margin-top: 10px;
+  }
+}
+
+/*-----------------------------
+    13. BADGE LIST
+-----------------------------*/
+.badge-list {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 32px);
+  grid-gap: 14px;
+
+  &.align-left {
+    justify-content: flex-start;
+  }
+
+  &.small {
+    grid-gap: 8px;
+  }
+}
+
+/*-----------------------------
+    14. BADGE ITEM
+-----------------------------*/
+.badge-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 35px;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .badge-item-text {
+    color: $white;
+    font-size: $fs-11;
+    font-weight: $weight-bold;
+    position: relative;
+    top: 1px;
+    z-index: 2;
+  }
+}
+
+/*-----------------------------
+    15. TAG LIST
+-----------------------------*/
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -12px;
+
+  .tag-item {
+    margin: 12px 12px 0 0;
+  }
+}
+
+/*-----------------------------
+    16. TAG ITEM
+-----------------------------*/
+.tag-item {
+  display: block;
+  height: 24px;
+  padding: 0 12px;
+  border-radius: 200px;
+  background-color: $black;
+  color: $white;
+  font-size: $fs-12;
+  font-weight: $weight-bold;
+  line-height: 24px;
+
+  &.secondary {
+    background-color: $color-secondary;
+    transition: background-color .2s ease-in-out;
+
+    &:hover {
+      color: $white;
+      background-color: $color-primary-background;
+    }
+  }
+}
+
+/*-----------------------------
+    17. XM TOOLTIP TEXT
+-----------------------------*/
+.xm-tooltip-text {
+  padding: 0 12px;
+  border-radius: 200px;
+  background-color: $color-tooltip-background;
+  color: $white;
+  font-size: $fs-12;
+  font-weight: $weight-bold;
+  line-height: 24px;
+}
+
+/*--------------------------------
+    18. USER SHORT DESCRIPTION
+--------------------------------*/
+.user-short-description {
+  padding-top: 84px;
+  position: relative;
+
+  &.big {
+    padding-top: 52px;
+
+    .user-short-description-avatar {
+      top: -116px;
+      margin-left: -74px;
+    }
+
+    .user-short-description-title {
+      font-size: $fs-24;
+    }
+
+    .user-short-description-text {
+      font-size: $fs-12;
+    }
+  }
+
+  &.small {
+    padding-top: 62px;
+
+    .user-short-description-avatar {
+      margin-left: -50px;
+    }
+  }
+
+  &.landscape {
+    padding: 0 0 0 32px;
+
+    .user-short-description-avatar {
+      top: 0;
+      margin-left: 0;
+    }
+
+    .user-short-description-title,
+    .user-short-description-text {
+      text-align: left;
+    }
+
+    &.tiny {
+      height: 56px;
+      padding-top: 12px;
+
+      .user-short-description-avatar {
+        left: -25px;
+      }
+    }
+  }
+
+  .user-short-description-avatar {
+    position: absolute;
+    top: -54px;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  .user-short-description-title,
+  .user-short-description-text {
+    font-weight: $weight-bold;
+    text-align: center;
+  }
+
+  .user-short-description-title {
+    font-size: $fs-18;
+
+    a {
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+
+    &.small {
+      font-size: $fs-14;
+    }
+  }
+
+  .user-short-description-text {
+    margin-top: 10px;
+    color: $color-text-alt-2;
+    font-size: $fs-11;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+
+    a {
+      color: $color-text-alt-2;
+      font-weight: $weight-bold;
+
+      &:hover {
+        color: $color-primary-dark;
+      }
+    }
+
+    &.regular {
+      font-size: $fs-12;
+      font-weight: $weight-medium;
+      text-transform: none;
+    }
+  }
+}
+
+/*-----------------------------
+    19. SLIDER CONTROL
+-----------------------------*/
+.slider-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  &.negative {
+    .slider-control-icon {
+      fill: $white;
+    }
+
+    &.disabled,
+    &[aria-disabled=true] {
+      opacity: .4;
+
+      &:hover {
+        .slider-control-icon {
+          fill: $white;
+          opacity: .4;
+        }
+      }
+    }
+
+    &:hover {
+      .slider-control-icon {
+        fill: $white;
+        opacity: 1;
+      }
+    }
+  }
+
+  &.disabled,
+  &[aria-disabled=true] {
+    opacity: .5;
+
+    &:hover {
+      .slider-control-icon {
+        fill: $color-icon;
+        opacity: .5;
+      }
+    }
+  }
+
+  .slider-control-icon {
+    fill: $color-icon;
+    pointer-events: none;
+    opacity: .6;
+    transition: fill .2s ease-in-out, opacity .2s ease-in-out;
+  }
+
+  &.left {
+    .slider-control-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover {
+    .slider-control-icon {
+      fill: $color-icon-bold;
+      opacity: 1;
+    }
+  }
+}
+
+/*-----------------------------
+    20. SLIDER ROSTER
+-----------------------------*/
+.slider-roster {
+  display: flex;
+
+  .slider-roster-item {
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/*-----------------------------
+    21. SLIDER ROSTER ITEM
+-----------------------------*/
+.slider-roster-item {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $color-icon-bold;
+  opacity: .2;
+  cursor: pointer;
+
+  &.tns-nav-active {
+    opacity: 1;
+  }
+}
+
+/*-----------------------------
+    22. TAG STICKER
+-----------------------------*/
+.tag-sticker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: $color-tag-sticker-background;
+  box-shadow: $shadow;
+
+  .tag-sticker-icon {
+    fill: $color-tag-sticker-icon;
+
+    &.primary {
+      fill: $color-tag-sticker-icon-primary;
+    }
+  }
+}
+
+/*-----------------------------
+    23. TEXT STICKER
+-----------------------------*/
+.text-sticker {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 200px;
+  background-color: $color-text-sticker-background;
+  box-shadow: $shadow-dark-alt;
+  font-size: $fs-14;
+  font-weight: $weight-bold;
+  line-height: 32px;
+
+  &.round {
+    border-radius: 12px;
+  }
+
+  .highlighted {
+    color: $color-primary-dark;
+  }
+
+  .text-sticker-icon {
+    margin-right: 4px;
+    fill: $color-primary-dark;
+  }
+
+  &.small-text {
+    font-size: $fs-12;
+  }
+
+  &.small {
+    height: 24px;
+    padding: 0 12px;
+    font-size: $fs-12;
+    line-height: 24px;
+  }
+
+  &.medium {
+    height: 44px;
+    padding: 0 16px;
+    line-height: 44px;
+  }
+
+  &.negative {
+    color: $white;
+    background: $color-text-sticker-negative-background;
+  }
+
+  &.void {
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
+
+/*-----------------------------
+    24. DATE STICKER
+-----------------------------*/
+.date-sticker {
+  width: 44px;
+
+  .date-sticker-day,
+  .date-sticker-month {
+    color: $white;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .date-sticker-day {
+    padding: 10px 0 6px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: $color-date-sticker-day-background;
+    font-size: $fs-20;
+  }
+
+  .date-sticker-month {
+    padding: 4px 0;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: $color-primary-background;
+    font-size: $fs-12;
+  }
+}
+
+/*-----------------------------
+    25. DECORATED TEXT
+-----------------------------*/
+.decorated-text {
+  display: flex;
+  align-items: center;
+
+  .decorated-text-icon {
+    margin-right: 8px;
+    fill: $color-primary;
+  }
+
+  .decorated-text-content {
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+  }
+}
+
+/*-----------------------------
+    26. SIMPLE DROPDOWN
+-----------------------------*/
+.simple-dropdown {
+  width: 140px;
+  padding: 10px 0;
+  border-radius: 12px;
+  background-color: $color-box-over-box-light-background;
+  box-shadow: $shadow-dark;
+
+  &.padded {
+    padding: 12px 16px 16px;
+  }
+
+  .simple-dropdown-link {
+    padding: 8px 16px;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    cursor: pointer;
+    transition: color .2s ease-in-out, padding-left .2s ease-in-out;
+
+    &:hover {
+      padding-left: 20px;
+      color: $color-primary-dark;
+    }
+  }
+
+  .simple-dropdown-text {
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+
+    & + {
+      .simple-dropdown-text {
+        margin-top: 4px;
+      }
+    }
+
+    .reaction {
+      margin-right: 4px;
+    }
+
+    .bold {
+      font-weight: $weight-bold;
+    }
+  }
+}
+
+/*-----------------------------
+    27. PARAGRAPH
+-----------------------------*/
+.paragraph {
+  @include paragraph();
+}
+
+/*--------------------------------
+    28. INFORMATION LINE LIST
+--------------------------------*/
+.information-line-list {
+  .information-line {
+    margin-bottom: 14px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*-----------------------------
+    29. INFORMATION LINE
+-----------------------------*/
+.information-line {
+  display: flex;
+
+  .information-line-title,
+  .information-line-text {
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    line-height: (20 / 14) * 1em;
+  }
+
+  .information-line-title {
+    flex-shrink: 0;
+    width: 80px;
+    color: $color-text-alt;
+  }
+
+  .information-line-text {
+    .bold {
+      font-weight: $weight-bold;
+    }
+  }
+}
+
+/*---------------------------------
+    30. INFORMATION BLOCK LIST
+---------------------------------*/
+.information-block-list {
+  .information-block {
+    margin-bottom: 26px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*-----------------------------
+    31. INFORMATION BLOCK
+-----------------------------*/
+.information-block {
+  .information-block-title {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+
+  .information-block-text {
+    margin-top: 10px;
+    @include paragraph();
+  }
+}
+
+/*------------------------------------
+    32. TIMELINE INFORMATION LIST
+------------------------------------*/
+.timeline-information-list {
+  .timeline-information {
+    padding-bottom: 24px;
+
+    &:last-child {
+      padding-bottom: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    33. TIMELINE INFORMATION
+---------------------------------*/
+.timeline-information {
+  padding-left: 28px;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: $color-divider;
+    position: absolute;
+    top: 0;
+    left: 6px;
+  }
+
+  &::after {
+    content: '';
+    width: 13px;
+    height: 13px;
+    border: 4px solid $color-primary;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    left: 0;
+  }
+
+  .timeline-information-title {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+
+  .timeline-information-date {
+    margin-top: 6px;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+  }
+
+  .timeline-information-text {
+    margin-top: 8px;
+    @include paragraph();
+  }
+}
+
+/*---------------------------------
+    34. RATING LIST
+---------------------------------*/
+.rating-list {
+  display: flex;
+
+  &.form-rating {
+    .rating {
+      cursor: pointer;
+    }
+  }
+
+  .rating {
+    margin-right: 3px;
+
+    &.medium {
+      margin-right: 4px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &.medium {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    35. RATING
+---------------------------------*/
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9px;
+  height: 8px;
+
+  &.dark {
+    .rating-icon {
+      fill: $color-rating-icon-dark;
+    }
+
+    &.filled {
+      .rating-icon {
+        fill: $yellow-light;
+      }
+    }
+  }
+
+  &.medium {
+    width: 13px;
+    height: 12px;
+  }
+
+  &.filled {
+    .rating-icon {
+      fill: $yellow;
+    }
+  }
+
+  .rating-icon {
+    fill: $color-rating-icon;
+  }
+}
+
+/*---------------------------------
+    36. FILTERS
+---------------------------------*/
+.filters {
+  display: flex;
+
+  .filter {
+    margin-right: 20px;
+    padding-bottom: 4px;
+    color: $color-text-alt-2;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    opacity: .6;
+    cursor: pointer;
+    transition: color .2s ease-in-out, opacity .2s ease-in-out;
+
+    &.active,
+    &:hover {
+      color: $color-text;
+      opacity: 1;
+    }
+
+    &.active {
+      border-bottom: 2px solid $color-primary;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    37. FILTER TABS
+---------------------------------*/
+.filter-tabs {
+  display: flex;
+
+  .filter-tab {
+    &::before {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background-color: $color-divider;
+      position: absolute;
+      top: 38px;
+      left: 0;
+    }
+
+    &:last-child {
+      &::after {
+        content: '';
+        width: 1px;
+        height: 20px;
+        background-color: $color-divider;
+        position: absolute;
+        top: 38px;
+        right: 0;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    38. FILTER TAB
+---------------------------------*/
+.filter-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 162px;
+  height: 100%;
+  border-bottom: 4px solid transparent;
+  cursor: pointer;
+  position: relative;
+  transition: border-color .2s ease-in-out;
+
+  &.secondary {
+    &.active {
+      border-bottom-color: $color-secondary;
+    }
+  }
+
+  &.active {
+    border-bottom-color: $color-primary;
+
+    .filter-tab-text {
+      color: $color-text;
+    }
+  }
+
+  .filter-tab-text {
+    padding: 4px 0;
+    color: $color-text-alt-2;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    transition: color .2s ease-in-out;
+  }
+}
+
+/*---------------------------------
+    39. VIEW ACTIONS
+---------------------------------*/
+.view-actions {
+  display: flex;
+
+  .view-action {
+    margin-right: 26px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    40. VIEW ACTION
+---------------------------------*/
+.view-action {
+  cursor: pointer;
+
+  &.active,
+  &:hover {
+    .view-action-icon {
+      fill: $color-icon-bold;
+      opacity: 1;
+    }
+  }
+
+  .view-action-icon {
+    fill: $color-icon;
+    opacity: .4;
+    transition: opacity .2s ease-in-out, fill .2s ease-in-out;
+  }
+}
+
+/*---------------------------------
+    41. TWEETS
+---------------------------------*/
+.tweets {
+  .tweet {
+    margin-bottom: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    42. TWEET
+---------------------------------*/
+.tweet {
+  .tweet-author {
+    display: block;
+    min-height: 32px;
+    padding-left: 40px;
+    position: relative;
+
+    .tweet-author-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .tweet-author-title {
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+    }
+
+    .tweet-author-text {
+      margin-top: 6px;
+      font-size: $fs-12;
+      font-weight: $weight-medium;
+    }
+  }
+
+  .tweet-text {
+    display: block;
+    margin-top: 16px;
+    @include paragraph();
+
+    .highlighted {
+      color: $color-primary-dark;
+      font-weight: $weight-semibold;
+    }
+  }
+
+  .tweet-timestamp {
+    margin-top: 12px;
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+  }
+}
+
+/*---------------------------------
+    43. PLAY BUTTON
+---------------------------------*/
+.play-button {
+  width: 46px;
+  height: 46px;
+  padding: 12px 0 0 15px;
+  border: 4px solid $color-primary-light;
+  border-radius: 50%;
+  background-color: rgba(21, 21, 31, .96);
+
+  .play-button-icon {
+    display: block;
+  }
+}
+
+/*---------------------------------
+    44. IFRAME WRAP
+---------------------------------*/
+.iframe-wrap {
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/*---------------------------------
+    45. POPUP VIDEO
+---------------------------------*/
+.popup-video {
+  width: 80%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*---------------------------------
+    46. POPUP PICTURE
+---------------------------------*/
+.popup-picture {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  opacity: 0;
+  visibility: hidden;
+
+  .widget-box {
+    flex-shrink: 0;
+    width: 384px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    .meta-line {
+      &.settings {
+        margin-left: 22px;
+
+        .post-settings {
+          width: 22px;
+        }
+      }
+    }
+
+    .widget-box-scrollable {
+      overflow: hidden auto;
+    }
+
+    .post-comment {
+      &.reply-2 {
+        padding-left: 96px;
+    
+        .user-avatar {
+          left: 42px;
+        }
+      }
+    }
+  }
+
+  .popup-picture-image-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: $black-darker;
+
+    .popup-picture-image {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/*---------------------------------
+    47. POPUP EVENT
+---------------------------------*/
+.popup-event {
+  width: 90%;
+  max-width: 584px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  opacity: 0;
+  visibility: hidden;
+
+  .popup-event-cover {
+    width: 100%;
+    height: 204px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .popup-event-info {
+    padding: 32px 28px;
+    position: relative;
+
+    .user-avatar-list {
+      margin-top: 18px;
+    }
+
+    .g-map {
+      height: 260px;
+      margin-top: 22px;
+    }
+  }
+
+  .popup-event-title {
+    font-size: $fs-24;
+    font-weight: $weight-bold;
+  }
+
+  .popup-event-subtitle {
+    margin-top: 32px;
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+  }
+
+  .popup-event-text {
+    margin-top: 16px;
+    @include paragraph();
+    color: $color-text-2;
+  }
+
+  .decorated-feature-list {
+    margin-top: 14px;
+  }
+
+  .popup-event-button {
+    width: 200px;
+    position: absolute;
+    top: -30px;
+    right: 28px;
+  }
+
+  & > .content-actions {
+    border-top: 1px solid $color-divider;
+    margin: 0 28px;
+  }
+}
+
+/*---------------------------------
+    48. POPUP CLOSE BUTTON
+---------------------------------*/
+.popup-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: $color-secondary-darker;
+  cursor: pointer;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 2;
+  transition: background-color .2s ease-in-out;
+
+  &:hover {
+    background-color: $color-primary-background;
+  }
+
+  .popup-close-button-icon {
+    pointer-events: none;
+  }
+}
+
+/*---------------------------------
+    49. DECORATED FEATURE LIST
+---------------------------------*/
+.decorated-feature-list {
+  margin-top: -18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .decorated-feature {
+    width: 50%;
+    margin-top: 18px;
+  }
+}
+
+/*---------------------------------
+    50. DECORATED FEATURE
+---------------------------------*/
+.decorated-feature {
+  display: flex;
+
+  .decorated-feature-icon {
+    margin-top: 6px;
+    flex-shrink: 0;
+    fill: $color-primary;
+  }
+
+  .decorated-feature-info {
+    margin-left: 12px;
+  }
+
+  .decorated-feature-title {
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+  }
+
+  .decorated-feature-text {
+    margin-top: 2px;
+    color: $gray-dark;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    line-height: (20 / 14) * 1em;
+  }
+}
+
+/*---------------------------------
+    51. META LINE
+---------------------------------*/
+.meta-line {
+  display: flex;
+  align-items: center;
+
+  & + {
+    .meta-line {
+      margin-left: 22px;
+    }
+  }
+
+  .meta-line-list {
+    & + {
+      .meta-line-text {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &.settings {
+    margin-left: 14px;
+  }
+
+  .meta-line-text {
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+
+    a {
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+  }
+
+  .meta-line-link {
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    cursor: pointer;
+    transition: color .2s ease-in-out;
+
+    &.light {
+      color: $color-text-alt-2;
+    }
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+
+  .meta-line-timestamp {
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+  }
+}
+
+/*---------------------------------
+    52. REACTION OPTIONS
+---------------------------------*/
+.reaction-options {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 16px;
+  border-radius: 200px;
+  background-color: $color-box-over-box-light-background;
+  box-shadow: $shadow-dark;
+
+  &.small {
+    height: 40px;
+
+    .reaction-option {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .reaction-option {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      transform: translate(0, -4px);
+    }
+
+    .reaction-option-image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/*---------------------------------
+    53. POST OPTIONS
+---------------------------------*/
+.post-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+  padding: 0 28px;
+  border-top: 1px solid $color-divider;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: $color-box-background-alt;
+}
+
+/*---------------------------------
+    54. POST OPTION
+---------------------------------*/
+.post-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 44px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out;
+
+  &.no-text {
+    width: 80px;
+
+    .post-option-icon {
+      margin-right: 0;
+    }
+  }
+
+  &.active,
+  &:hover {
+    background-color: $color-box-over-box-light-background;
+    box-shadow: $shadow;
+
+    .post-option-icon {
+      fill: $color-primary;
+      opacity: 1;
+    }
+
+    .post-option-text {
+      color: $color-text;
+    }
+  }
+  
+  .post-option-icon {
+    margin-right: 16px;
+    fill: $color-icon;
+    opacity: .6;
+    transition: fill .2s ease-in-out, opacity .2s ease-in-out;
+
+    &.icon-thumbs-up {
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  .post-option-text {
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    transition: color .2s ease-in-out;
+  }
+}
+
+/*---------------------------------
+    55. POST SETTINGS
+---------------------------------*/
+.post-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+
+  .post-settings-icon {
+    fill: $color-icon;
+    opacity: .4;
+    transition: opacity .2s ease-in-out, fill .2s ease-in-out;
+  }
+
+  &.active,
+  &:hover {
+    .post-settings-icon {
+      fill: $color-icon-bold;
+      opacity: 1;
+    }
+  }
+}
+
+/*---------------------------------
+    56. SLIDER LINE
+---------------------------------*/
+.slider-line {
+  height: 120px;
+  padding: 0 48px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  &.small {
+    height: 100px;
+
+    .slider-controls {
+      top: 40px;
+    }
+
+    .slider-slides {
+      .user-stat {
+        height: 100px;
+      }
+    }
+  }
+
+  &.medium {
+    height: 160px;
+
+    .slider-controls {
+      top: 70px;
+    }
+
+    .slider-slides {
+      &.with-separator {
+        .slider-slide {
+          &::before {
+            height: 40px;
+            top: 60px;
+          }
+
+          &:last-child {
+            &::after {
+              height: 40px;
+              top: 60px;
+            }
+          }
+        }
+      }
+
+      .reaction-stat {
+        height: 160px;
+      }
+    }
+  }
+
+  .slider-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 14px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 1;
+  }
+
+  .slider-slides {
+    position: relative;
+    z-index: 2;
+
+    &.with-separator {
+      .slider-slide {
+        position: relative;
+  
+        &::before {
+          content: '';
+          width: 1px;
+          height: 20px;
+          background-color: $color-divider;
+          position: absolute;
+          top: 40px;
+          left: 0;
+        }
+
+        &:last-child {
+          &::after {
+            content: '';
+            width: 1px;
+            height: 20px;
+            background-color: $color-divider;
+            position: absolute;
+            top: 40px;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .stat-block {
+      height: 120px;
+      padding-left: 28px;
+      align-items: center;
+    }
+
+    .user-stat {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .reaction-stat {
+      justify-content: center;
+    }
+  }
+}
+
+/*---------------------------------
+    57. STAT BLOCK LIST
+---------------------------------*/
+.stat-block-list {
+  .stat-block {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    58. STAT BLOCK
+---------------------------------*/
+.stat-block {
+  display: flex;
+  min-height: 48px;
+
+  .stat-block-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(-145deg, $color-primary-light, $color-secondary);
+    margin-right: 16px;
+
+    .stat-block-decoration-icon {
+      fill: $white;
+    }
+  }
+
+  .stat-block-info {
+    margin-top: 6px;
+
+    .stat-block-title {
+      color: $color-text-alt-2;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+    }
+
+    .stat-block-text {
+      margin-top: 8px;
+      font-size: $fs-16;
+      font-weight: $weight-bold;
+    }
+  }
+}
+
+/*---------------------------------
+    59. ACHIEVEMENT STATUS LIST
+---------------------------------*/
+.achievement-status-list {
+  display: flex;
+
+  .achievement-status {
+    width: 50%;
+
+    .achievement-status-info {
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: $color-divider;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    &:last-child {
+      .achievement-status-info {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    60. ACHIEVEMENT STATUS
+---------------------------------*/
+.achievement-status {
+  text-align: center;
+
+  .achievement-status-progress {
+    font-size: $fs-22;
+    font-weight: $weight-bold;
+  }
+
+  .achievement-status-info {
+    margin-top: 14px;
+
+    .achievement-status-title {
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+    }
+  
+    .achievement-status-text {
+      margin-top: 6px;
+      color: $color-text-alt-2;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .achievement-status-image {
+    display: block;
+    margin: 22px auto 0;
+  }
+}
+
+/*---------------------------------
+    61. PAGE LOADER
+---------------------------------*/
+.page-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-page-loader-background;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .page-loader-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 28px;
+    background-color: $color-secondary;
+
+    .icon-logo {
+      fill: $white;
+      width: 36px;
+      height: 52px;
+    }
+  }
+
+  .page-loader-info {
+    .page-loader-info-title,
+    .page-loader-info-text {
+      color: $white;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .page-loader-info-title {
+      margin-top: 24px;
+      font-family: $font-secondary;
+      font-size: $fs-28;
+      font-weight: $weight-black;
+    }
+
+    .page-loader-info-text {
+      margin-top: 10px;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+    }
+  }
+
+  .page-loader-indicator {
+    margin-top: 60px;
+  }
+}
+
+/*---------------------------------
+    62. REACTION COUNT LIST
+---------------------------------*/
+.reaction-count-list {
+  display: flex;
+  flex-direction: column;
+
+  &.landscape {
+    flex-direction: row;
+    
+    .reaction-count {
+      margin: 0 32px 0 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  .reaction-count {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    63. REACTION COUNT
+---------------------------------*/
+.reaction-count {
+  display: flex;
+  align-items: center;
+
+  &.negative {
+    .reaction-count-icon {
+      fill: $color-primary-light;
+    }
+  
+    .reaction-count-text {
+      color: $white;
+    }
+  }
+
+  .reaction-count-icon {
+    fill: $color-primary;
+  }
+
+  .reaction-count-text {
+    margin-left: 16px;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    position: relative;
+    top: 1px;
+  }
+}
+
+/*---------------------------------
+    64. UPLOAD ITEM LIST
+---------------------------------*/
+.upload-item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 168px);
+  grid-gap: 16px 22px;
+  justify-content: center;
+}
+
+/*---------------------------------
+    65. UPLOAD ITEM
+---------------------------------*/
+.upload-item {
+  &:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 168px;
+    background-color: $color-primary-background;
+    border-radius: 12px;
+    cursor: pointer;
+
+    .icon-plus {
+      pointer-events: none;
+    }
+  }
+
+  .upload-item-image {
+    width: 100%;
+    height: 168px;
+    border-radius: 12px;
+  }
+
+  .form-input,
+  .checkbox-wrap {
+    margin-top: 16px;
+  }
+}
+
+/*---------------------------------
+    66. SIMPLE ACCORDION LIST
+---------------------------------*/
+.simple-accordion-list {
+  .simple-accordion {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    67. SIMPLE ACCORDION
+---------------------------------*/
+.simple-accordion {
+  .simple-accordion-header {
+    position: relative;
+
+    &.selected {
+      .simple-accordion-icon {
+        .icon-plus-small {
+          display: none;
+        }
+        .icon-minus-small {
+          display: block;
+        }
+      }
+    }
+
+    .simple-accordion-title {
+      padding-right: 16px;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+      line-height: 20px;
+      cursor: pointer;
+    }
+
+    .simple-accordion-icon {
+      position: absolute;
+      top: 4px;
+      right: 0;
+      cursor: pointer;
+
+      .icon-plus-small,
+      .icon-minus-small {
+        fill: $color-primary;
+      }
+
+      .icon-plus-small {
+        display: block;
+      }
+      .icon-minus-small {
+        display: none;
+      }
+    }
+
+    .simple-accordion-content {
+      margin-top: 20px;
+
+      .simple-accordion-text {
+        @include paragraph();
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    68. WEEK BOX
+---------------------------------*/
+.week-box {
+  display: flex;
+  background-color: $color-box-background;
+  border-radius: 12px;
+  box-shadow: $shadow;
+
+  .week-box-item {
+    width: (100 / 7) * 1%;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background-color: $color-divider;
+      position: absolute;
+      top: 40px;
+      right: 0;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    69. WEEK BOX ITEM
+---------------------------------*/
+.week-box-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+
+  &.active {
+    border-bottom: 4px solid $color-primary;
+
+    .week-box-item-title {
+      color: $color-primary-dark;
+    }
+
+    .week-box-item-text {
+      color: $color-text;
+    }
+  }
+
+  .week-box-item-title,
+  .week-box-item-text {
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+  }
+
+  .week-box-item-title {
+    font-size: $fs-22;
+  }
+
+  .week-box-item-text {
+    margin-top: 10px;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+  }
+}
+
+/*---------------------------------
+    70. FORUM CATEGORY
+---------------------------------*/
+.forum-category {
+  display: flex;
+  align-items: center;
+
+  .forum-category-image {
+    flex-shrink: 0;
+  }
+
+  .forum-category-info {
+    margin-left: 28px;
+
+    .forum-category-title {
+      font-size: $fs-18;
+      font-weight: $weight-bold;
+
+      a {
+        color: $color-text;
+        font-weight: $weight-bold;
+      }
+    }
+
+    .forum-category-text {
+      margin-top: 14px;
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+      line-height: (20 / 14) * 1em;
+    }
+
+    .forum-category-link {
+      margin-top: 16px;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+
+      a {
+        color: $color-text;
+        font-weight: $weight-bold;
+
+        &:hover {
+          color: $color-primary-dark;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    71. DISCUSSION PREVIEW
+---------------------------------*/
+.discussion-preview {
+  &.pinned {
+    .discussion-preview-title {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: 'Pinned';
+        height: 20px;
+        padding: 0 8px;
+        margin-right: 12px;
+        border-radius: 200px;
+        background-color: $color-primary-background;
+        color: $white;
+        font-size: $fs-12;
+        font-weight: $weight-bold;
+        text-transform: uppercase;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .discussion-preview-title {
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+
+    & + {
+      .discussion-preview-meta {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .page-items {
+    margin-top: 12px;
+  }
+
+  .discussion-preview-meta {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+
+    .discussion-preview-meta-text {
+      color: $color-text-2;
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+
+      a {
+        color: $color-text;
+        font-weight: $weight-bold;
+
+        &.highlighted {
+          color: $color-primary-dark;
+        }
+      }
+
+      .separator {
+        margin: 0 8px;
+      }
+    }
+
+    .user-avatar {
+      margin: 0 6px;
+    }
+  }
+}
+
+/*---------------------------------
+    72. PAGE ITEMS
+---------------------------------*/
+.page-items {
+  display: flex;
+
+  .page-item {
+    margin-right: 6px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    73. PAGE ITEM
+---------------------------------*/
+.page-item {
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 8px;
+  background-color: $color-box-over-box-light-background;
+  box-shadow: $shadow-dark-alt-2;
+  font-size: $fs-12;
+  font-weight: $weight-bold;
+  line-height: 24px;
+
+  &.void {
+    box-shadow: none;
+  }
+}
+
+/*---------------------------------
+    74. QUICK POST
+---------------------------------*/
+.quick-post {
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  &.medium {
+    .quick-post-header {
+      display: flex;
+      align-items: center;
+      min-height: 82px;
+      padding-left: 28px;
+    }
+
+    .quick-post-body {
+      .form-textarea {
+        textarea {
+          height: 200px;
+        }
+      }
+    }
+
+    .quick-post-footer {
+      min-height: 92px;
+
+      .quick-post-footer-actions {
+        .button {
+          width: 120px;
+
+          &:last-child {
+            width: 140px;
+          }
+        }
+      }
+    }
+  }
+
+  .quick-post-header {
+    border-bottom: 1px solid $color-divider;
+    
+    .quick-post-header-title {
+      font-size: $fs-16;
+      font-weight: $weight-bold;
+    }
+
+    .option-items {
+      height: 65px;
+      background-color: $color-box-background;
+      border-top-right-radius: 12px;
+      border-top-left-radius: 12px;
+
+      .option-item {
+        width: (100/3) * 1%;
+
+        &::after {
+          top: 22px;
+        }
+      }
+    }
+  }
+
+  .quick-post-body {
+    .form-textarea {
+      background-color: $color-box-background-alt;
+
+      textarea {
+        height: 120px;
+        background-color: $color-box-background-alt;
+        border-radius: 0;
+        border: none;
+
+        &::placeholder {
+          font-weight: $weight-medium;
+        }
+      }
+
+      .form-textarea-limit-text {
+        color: $color-text-alt-2;
+        padding-top: 10px;
+        height: 40px;
+      }
+    }
+  }
+
+  .quick-post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 76px;
+    padding: 0 28px;
+    border-top: 1px solid $color-divider;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    .quick-post-footer-actions {
+      display: flex;
+      align-items: center;
+
+      .quick-post-footer-action {
+        margin-right: 22px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .button {
+        width: 80px;
+        margin-right: 6px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .quick-post-footer-action {
+      cursor: pointer;
+
+      &:hover {
+        .quick-post-footer-action-icon {
+          fill: $color-icon-bold;
+        }
+      }
+
+      .quick-post-footer-action-icon {
+        transition: fill .2s ease-in-out;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    75. OPTION ITEMS
+---------------------------------*/
+.option-items {
+  display: flex;
+
+  .option-item {
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background-color: $color-divider;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    76. OPTION ITEM
+---------------------------------*/
+.option-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &.active {
+    border-bottom: 4px solid $color-primary;
+
+    .option-item-icon {
+      fill: $color-icon-bold;
+    }
+
+    .option-item-title {
+      color: $color-text;
+    }
+  }
+
+  .option-item-icon {
+    margin-right: 16px;
+    fill: $color-icon;
+  }
+
+  .option-item-title {
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+  }
+}
+
+/*---------------------------------
+    77. STATS BOX
+---------------------------------*/
+.stats-box {
+  height: 220px;
+  padding: 90px 28px 0;
+  border-radius: 12px;
+
+  &.small {
+    height: 142px;
+    padding-top: 32px;
+
+    .stats-box-value {
+      font-size: $fs-28;
+    }
+
+    .stats-box-title {
+      font-size: $fs-14;
+    }
+
+    &.stat-profile-views {
+      background: url('../img/graph/stat/01.jpg') no-repeat center;
+      background-size: cover;
+    }
+  
+    &.stat-posts-created {
+      background: url('../img/graph/stat/02.jpg') no-repeat center;
+      background-size: cover;
+    }
+  
+    &.stat-reactions-received {
+      background: url('../img/graph/stat/03.jpg') no-repeat center;
+      background-size: cover;
+    }
+  
+    &.stat-comments-received {
+      background: url('../img/graph/stat/04.jpg') no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  &.stat-profile-views {
+    background: url('../img/graph/stat/01-big.png') no-repeat center;
+    background-size: cover;
+  }
+
+  &.stat-posts-created {
+    background: url('../img/graph/stat/02-big.png') no-repeat center;
+    background-size: cover;
+  }
+
+  &.stat-reactions-received {
+    background: url('../img/graph/stat/03-big.png') no-repeat center;
+    background-size: cover;
+  }
+
+  &.stat-comments-received {
+    background: url('../img/graph/stat/04-big.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .stats-box-value,
+  .stats-box-diff-value,
+  .stats-box-title,
+  .stats-box-text {
+    color: $white;
+  }
+
+  .stats-box-value-wrap {
+    display: flex;
+    align-items: flex-start;
+
+    .stats-box-diff {
+      margin-left: 12px;
+    }
+  }
+
+  .stats-box-value {
+    font-size: $fs-32;
+    font-weight: $weight-bold;
+  }
+
+  .stats-box-diff {
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 2px;
+    
+    .stats-box-diff-icon {
+      margin-right: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid $white;
+
+      .icon-plus-small,
+      .icon-minus-small {
+        width: 6px;
+        height: 6px;
+      }
+
+      &.positive {
+        border-color: $color-primary-light;
+
+        .icon-plus-small {
+          fill: $color-primary-light;
+        }
+      }
+
+      &.negative {
+        border-color: $red-light;
+
+        .icon-minus-small {
+          fill: $red-light;
+        }
+      }
+    }
+
+    .stats-box-diff-value {
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  .stats-box-title {
+    margin-top: 10px;
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+  }
+
+  .stats-box-text {
+    margin-top: 2px;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+  }
+}
+
+/*---------------------------------
+    78. STATS BOX SLIDER
+---------------------------------*/
+.stats-box-slider {
+  position: relative;
+
+  .stats-box-slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 28px 28px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    .stats-box-slider-controls-title {
+      color: $white;
+      font-size: $fs-16;
+      font-weight: $weight-bold;
+    }
+
+    .slider-controls {
+      display: flex;
+      
+      .slider-control {
+        &:first-child {
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    79. REACTION STATS
+---------------------------------*/
+.reaction-stats {
+  display: flex;
+  justify-content: center;
+
+  .reaction-stat {
+    width: 114px;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background-color: $color-divider;
+      position: absolute;
+      top: 32px;
+      right: 0;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    80. REACTION STAT
+---------------------------------*/
+.reaction-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .reaction-stat-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .reaction-stat-title {
+    margin-top: 16px;
+    font-size: $fs-22;
+    font-weight: $weight-bold;
+  }
+
+  .reaction-stat-text {
+    margin-top: 8px;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+  }
+}
+
+/*---------------------------------
+    81. SIMPLE TAB ITEMS
+---------------------------------*/
+.simple-tab-items {
+  display: flex;
+  border-bottom: 1px solid $color-divider;
+
+  .simple-tab-item {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .form {
+    display: none;
+  }
+}
+
+/*---------------------------------
+    82. SIMPLE TAB ITEM
+---------------------------------*/
+.simple-tab-item {
+  height: 36px;
+  color: $color-text-alt-2;
+  font-size: $fs-14;
+  font-weight: $weight-bold;
+  opacity: .6;
+  cursor: pointer;
+
+  &.active {
+    border-bottom: 4px solid $color-primary;
+    color: $color-text;
+    opacity: 1;
+  }
+}
+
+/*---------------------------------
+    83. BANNER PROMO
+---------------------------------*/
+.banner-promo {
+  display: block;
+  width: 100%;
+  max-width: 284px;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+}
+
+/*---------------------------------
+    84. POLL BOX
+---------------------------------*/
+.poll-box {
+  padding: 32px 28px;
+  border-radius: 12px;
+  background-color: $color-box-over-box-background;
+  box-shadow: $shadow;
+
+  .poll-title {
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+  }
+
+  .poll-text {
+    margin-top: 4px;
+    @include paragraph();
+    color: $color-text-alt;
+  }
+
+  .form,
+  .poll-results {
+    margin-top: 28px;
+  }
+
+  .poll-box-actions {
+    margin-top: 40px;
+    
+    .button {
+      width: 140px;
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    85. POLL RESULTS
+---------------------------------*/
+.poll-results {
+  .poll-result {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    86. POLL RESULT
+---------------------------------*/
+.poll-result {
+  .progress-stat {
+    max-width: 472px;
+  }
+
+  .meta-line {
+    margin-top: 10px;
+  }
+}
+
+/*---------------------------------
+    87. PICTURE COLLAGE
+---------------------------------*/
+.picture-collage {
+  .picture-collage-row {
+    display: flex;
+    margin-bottom: 6px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.medium {
+      .picture-collage-item {
+        width: 261px;
+        height: 240px;
+      } 
+    }
+
+    .picture-collage-item {
+      width: 172px;
+      height: 160px;
+      margin-right: 6px;
+      position: relative;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .photo-preview {
+        width: 100%;
+        height: 100%;
+      }
+
+      .picture-collage-item-overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background-color: $color-picture-collage-overlay-background;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+
+        .picture-collage-item-overlay-text {
+          color: $white;
+          font-size: $fs-24;
+          font-weight: $weight-bold;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    88. QUOTE BOX
+---------------------------------*/
+.quote-box {
+  padding: 26px 28px;
+  border-radius: 12px;
+  background-color: $color-box-over-box-background;
+  box-shadow: $shadow;
+  position: relative;
+
+  .quote-box-icon {
+    fill: $color-primary;
+    opacity: .1;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+  }
+
+  .quote-box-text {
+    @include paragraph();
+  }
+}
+
+/*---------------------------------
+    89. STATS DECORATION
+---------------------------------*/
+.stats-decoration {
+  height: 96px;
+  padding: 28px 0 0 88px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  &.secondary {
+    background: url('../img/graph/stat/05.png') no-repeat right bottom $color-box-background;
+
+    .stats-decoration-icon-wrap {
+      background-color: $color-secondary;
+    }
+  }
+
+  &.primary {
+    background: url('../img/graph/stat/06.png') no-repeat right bottom $color-box-background;
+
+    .stats-decoration-icon-wrap {
+      background-color: $color-primary-background;
+    }
+  }
+
+  &.v2 {
+    height: 118px;
+    padding: 24px 0 0 28px;
+
+    .stats-decoration-title {
+      font-size: $fs-28;
+    }
+
+    .stats-decoration-subtitle {
+      margin-top: 8px;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+    }
+
+    .stats-decoration-text {
+      margin-top: 6px;
+    }
+
+    .percentage-diff {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+    }
+
+    &.big {
+      height: 213px;
+      padding: 46px 0 0;
+      text-align: center;
+
+      &.secondary {
+        background: url('../img/graph/stat/05-big.png') repeat-x center bottom $color-box-background;
+      }
+
+      &.primary {
+        background: url('../img/graph/stat/06-big.png') repeat-x center bottom $color-box-background;
+      }
+
+      .stats-decoration-title {
+        font-size: $fs-48;
+      }
+    }
+  }
+
+  .stats-decoration-icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    position: absolute;
+    top: 26px;
+    left: 28px;
+    z-index: 1;
+
+    .stats-decoration-icon {
+      fill: $white;
+    }
+  }
+
+  .stats-decoration-title {
+    font-size: $fs-22;
+    font-weight: $weight-bold;
+  }
+
+  .stats-decoration-text {
+    margin-top: 8px;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+  }
+}
+
+/*---------------------------------
+    90. PERCENTAGE DIFF
+---------------------------------*/
+.percentage-diff {
+  display: flex;
+  align-items: center;
+
+  .percentage-diff-icon-wrap {
+    margin-right: 4px;
+  }
+
+  .percentage-diff-text {
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+  }
+}
+
+/*-----------------------------------
+    91. PERCENTAGE DIFF ICON WRAP
+-----------------------------------*/
+.percentage-diff-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+
+  &.positive {
+    border-color: $color-primary;
+
+    .percentage-diff-icon {
+      fill: $color-primary;
+    }
+  }
+
+  &.negative {
+    border-color: $red-light;
+
+    .percentage-diff-icon {
+      fill: $red-light;
+    }
+  }
+
+  .percentage-diff-icon {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/*---------------------------------
+    92. SIDEBAR BOX
+---------------------------------*/
+.sidebar-box {
+  padding: 32px 28px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  &.no-padding {
+    padding: 0;
+  }
+
+  &.margin-top {
+    margin-top: 56px;
+  }
+  
+  .sidebar-box-title {
+    margin-top: 36px;
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+
+    &.medium-space {
+      margin-top: 60px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .sidebar-menu {
+    & + {
+      .button {
+        margin-top: 28px;
+      }
+
+      .sidebar-box-footer {
+        border-top: 1px solid $color-divider;
+      }
+    }
+  }
+
+  .sidebar-box-footer {
+    padding: 28px;
+
+    .button {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .sidebar-box-items {
+    margin-top: 36px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &.small-space {
+      margin-top: 32px;
+    }
+
+    .checkbox-line {
+      margin-bottom: 18px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .form-input {
+      &.small {
+        width: 80px;
+      }
+    }
+
+    .user-status {
+      & + {
+        .badge-list {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .totals-line-list {
+      & + {
+        .totals-line-list {
+          margin-top: 26px;
+        }
+
+        .button {
+          margin-top: 36px;
+        }
+
+        .price-title {
+          margin-top: 32px;
+        }
+      }
+    }
+
+    .price-title {
+      text-align: center;
+
+      & + {
+        .totals-line-list {
+          margin-top: 32px;
+        }
+      }
+    }
+
+    .badge-list {
+      & + {
+        .button {
+          margin-top: 32px;
+        }
+      }
+    }
+
+    .price-title {
+      & + {
+        .form {
+          margin-top: 40px;
+        }
+      }
+    }
+
+    .form {
+      .checkbox-wrap {
+        & + {
+          .checkbox-wrap {
+            margin-top: 22px;
+          }
+        }
+      }
+
+      & + {
+        .button {
+          margin-top: 30px;
+        }
+      }
+    }
+
+    .button {
+      & + {
+        .user-stats {
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 22px;
+
+    &.small-space {
+      margin-top: 16px;
+    }
+  }
+}
+
+/*---------------------------------
+    93. SIDEBAR MENU
+---------------------------------*/
+.sidebar-menu {
+  .sidebar-menu-item {
+    &:first-child {
+      .sidebar-menu-header {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &.round-borders {
+    .sidebar-menu-item {
+      &:last-child {
+        .sidebar-menu-header,
+        .sidebar-menu-body {
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    94. SIDEBAR MENU ITEM
+---------------------------------*/
+.sidebar-menu-item {
+  border-bottom: 1px solid $color-divider;
+
+  &.selected {
+    .sidebar-menu-header {
+      .sidebar-menu-header-control-icon {
+        .sidebar-menu-header-control-icon-open {
+          display: block;
+        }
+  
+        .sidebar-menu-header-control-icon-closed {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    95. SIDEBAR MENU HEADER
+---------------------------------*/
+.sidebar-menu-header {
+  height: 112px;
+  padding: 28px 26px 0 60px;
+  background-color: $color-box-background;
+  cursor: pointer;
+  position: relative;
+
+  .sidebar-menu-header-icon {
+    fill: $color-primary;
+    position: absolute;
+    top: 28px;
+    left: 28px;
+  }
+
+  .sidebar-menu-header-control-icon {
+    .sidebar-menu-header-control-icon-open,
+    .sidebar-menu-header-control-icon-closed {
+      fill: $color-icon-bold;
+      position: absolute;
+      top: 32px;
+      right: 28px;
+    }
+
+    .sidebar-menu-header-control-icon-open {
+      display: none;
+    }
+  }
+  
+  .sidebar-menu-header-title {
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+  }
+
+  .sidebar-menu-header-text {
+    margin-top: 4px;
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+    line-height: (16 / 12) * 1em;
+  }
+}
+
+/*---------------------------------
+    96. SIDEBAR MENU BODY
+---------------------------------*/
+.sidebar-menu-body {
+  padding: 12px 0 12px 60px;
+  border-top: 1px solid $color-divider;
+  background-color: $color-box-background-alt;
+
+  &.secondary {
+    .sidebar-menu-link {
+      &:hover,
+      &.active {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  .sidebar-menu-link {
+    display: block;
+    height: 34px;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    line-height: 34px;
+    cursor: pointer;
+    transition: transform .2s ease-in-out, color .25s ease-in-out;
+
+    &:hover,
+    &.active {
+      color: $color-primary-dark;
+      transform: translate(4px, 0);
+    }
+  }
+}
+
+/*---------------------------------
+    97. PRICE TITLE
+---------------------------------*/
+.price-title {
+  font-size: $fs-14;
+  font-weight: $weight-bold;
+
+  &.separator-bottom {
+    padding-bottom: 32px;
+    border-bottom: 1px solid $color-divider;
+  }
+
+  .currency {
+    color: $color-primary-dark;
+  }
+
+  &.big {
+    font-size: $fs-46;
+  }
+}
+
+/*---------------------------------
+    98. PROMO LINE
+---------------------------------*/
+.promo-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 98px;
+  padding: 0 20px 0 32px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  .promo-line-text {
+    width: 310px;
+    color: $color-text-alt;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    line-height: (20 / 14) * 1em;
+  }
+
+  .promo-line-actions {
+    display: flex;
+
+    .form-input {
+      margin-right: 16px;
+    }
+  }
+
+  .form-input {
+    width: 240px;
+  }
+
+  .button {
+    width: 180px;
+  }
+}
+
+/*---------------------------------
+    99. TAB BOX
+---------------------------------*/
+.tab-box {
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  .tab-box-options {
+    display: flex;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    .tab-box-option {
+      &:first-child {
+        border-top-left-radius: 12px;
+      }
+
+      &:last-child {
+        border-right: none;
+        border-top-right-radius: 12px;
+      }
+    }
+  }
+
+  .tab-box-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 66px;
+    border-bottom: 1px solid $color-divider;
+    border-right: 1px solid $color-divider;
+    background-color: $color-box-background-alt;
+    cursor: pointer;
+
+    .tab-box-option-title {
+      color: $color-text-alt-2;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+
+      .highlighted {
+        color: $color-primary-dark;
+      }
+    }
+
+    &.active {
+      background-color: $color-box-background;
+      border-bottom: none;
+
+      .tab-box-option-title {
+        color: $color-text;
+      }
+    }
+  }
+
+  .tab-box-item {
+    .tab-box-item-content {
+      padding: 0 28px 48px;
+
+      .tab-box-item-title {
+        margin-top: 48px;
+        font-size: $fs-22;
+        font-weight: $weight-bold;
+      }
+
+      .tab-box-item-paragraph {
+        margin-top: 28px;
+        @include paragraph();
+      }
+
+      .bullet-item-list {
+        margin-top: 32px;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    100. BULLET ITEM LIST
+---------------------------------*/
+.bullet-item-list {
+  .bullet-item {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    101. BULLET ITEM
+---------------------------------*/
+.bullet-item {
+  display: flex;
+  align-items: center;
+
+  .bullet-item-icon {
+    margin-right: 12px;
+    fill: $color-primary;
+  }
+
+  .bullet-item-text {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+}
+
+/*---------------------------------
+    102. ORDERED ITEM LIST
+---------------------------------*/
+.ordered-item-list {
+  .ordered-item {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    103. ORDERED ITEM
+---------------------------------*/
+.ordered-item {
+  display: flex;
+
+  .ordered-item-bullet {
+    width: 28px;
+    flex-shrink: 0;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    line-height: (24 / 14) * 1em;
+  }
+
+  .ordered-item-text {
+    @include paragraph();
+  }
+}
+
+/*---------------------------------
+    104. PROFILE STATS
+---------------------------------*/
+.profile-stats {
+  padding-bottom: 32px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  &.fixed-height {
+    height: 558px;
+    padding-bottom: 0;
+  }
+
+  .profile-stats-cover {
+    height: 160px;
+    padding-top: 34px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: url('../img/banner/banner-profile-stats.jpg') no-repeat center;
+    background-size: cover;
+
+    .profile-stats-cover-title,
+    .profile-stats-cover-text {
+      color: $white;
+      text-align: center;
+    }
+
+    .profile-stats-cover-title {
+      font-size: $fs-24;
+      font-weight: $weight-bold;
+    }
+
+    .profile-stats-cover-text {
+      margin-top: 4px;
+      font-size: $fs-16;
+      font-weight: $weight-medium;
+    }
+  }
+
+  .profile-stats-info {
+    .user-avatar {
+      margin: -60px auto 0;
+    }
+
+    .featured-stat-list {
+      margin-top: 18px;
+
+      & + {
+        .featured-stat-list {
+          margin-top: 38px;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    105. FEATURED STAT LIST
+---------------------------------*/
+.featured-stat-list {
+  display: flex;
+
+  .featured-stat {
+    width: 100%;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background-color: $color-divider;
+      position: absolute;
+      top: 52px;
+      right: 0;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    106. FEATURED STAT
+---------------------------------*/
+.featured-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .featured-stat-icon {
+    fill: $color-icon-bold;
+  }
+
+  .featured-stat-title {
+    margin-top: 20px;
+    font-size: $fs-22;
+    font-weight: $weight-bold;
+  }
+
+  .featured-stat-subtitle {
+    margin-top: 12px;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+
+  .featured-stat-text {
+    margin-top: 6px;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+  }
+
+  .progress-arc-wrap {
+    & + {
+      .featured-stat-subtitle {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+/*---------------------------------
+    107. FEATURED STAT BOX
+---------------------------------*/
+.featured-stat-box {
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  &.reactioner {
+    .featured-stat-box-cover {
+      background: url('../img/banner/banner-reaction.jpg') no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  &.commenter {
+    .featured-stat-box-cover {
+      background: url('../img/banner/banner-commenter.jpg') no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  .featured-stat-box-cover {
+    height: 120px;
+    padding-top: 32px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    .featured-stat-box-cover-title,
+    .featured-stat-box-cover-text {
+      color: $white;
+      text-align: center;
+    }
+
+    .featured-stat-box-cover-title {
+      font-size: $fs-24;
+      font-weight: $weight-bold;
+    }
+
+    .featured-stat-box-cover-text {
+      margin-top: 6px;
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+    }
+  }
+
+  .featured-stat-box-info {
+    padding-bottom: 28px;
+
+    .user-avatar {
+      margin: -30px auto 0;
+    }
+  }
+
+  .featured-stat-box-title,
+  .featured-stat-box-subtitle,
+  .featured-stat-box-text {
+    text-align: center;
+  }
+
+  .featured-stat-box-title {
+    margin-top: 8px;
+    font-size: $fs-22;
+    font-weight: $weight-bold;
+  }
+
+  .featured-stat-box-subtitle {
+    margin-top: 14px;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+
+  .featured-stat-box-text {
+    margin-top: 4px;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+  }
+}
+
+/*---------------------------------
+    108. ACHIEVEMENT BOX
+---------------------------------*/
+.achievement-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 142px;
+  padding: 0 28px;
+  border-radius: 12px;
+  box-shadow: $shadow-light;
+
+  &.secondary {
+    background: url('../img/achievement/banner/01.jpg') no-repeat center;
+    background-size: cover;
+  }
+
+  &.primary {
+    background: url('../img/achievement/banner/02.jpg') no-repeat center;
+    background-size: cover;
+  }
+
+  .achievement-box-info-wrap {
+    display: flex;
+    align-items: center;
+
+    .achievement-box-image {
+      margin-right: 16px;
+    }
+
+    .achievement-box-title,
+    .achievement-box-text {
+      color: $white;
+    }
+
+    .achievement-box-title {
+      font-size: $fs-24;
+      font-weight: $weight-bold;
+    }
+
+    .achievement-box-text {
+      margin-top: 8px;
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+
+      .bold {
+        margin-right: 4px;
+        font-weight: $weight-bold;
+      }
+    }
+  }
+
+  .button {
+    width: 140px;
+  }
+}
+
+/*---------------------------------
+    109. LEVEL PROGRESS BOX
+---------------------------------*/
+.level-progress-box {
+  display: flex;
+  align-items: center;
+  min-height: 120px;
+  padding: 0 28px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  .level-progress-badge {
+    flex-shrink: 0;
+    margin-right: 28px;
+  }
+
+  .progress-stat {
+    width: 100%;
+  }
+}
+
+/*---------------------------------
+    110. LEVEL PROGRESS BADGE
+---------------------------------*/
+.level-progress-badge {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 88px;
+  height: 86px;
+  background: url('../img/badge/level-badge.png') no-repeat center;
+
+  .level-progress-badge-title,
+  .level-progress-badge-text {
+    color: $white;
+    text-align: center;
+  }
+
+  .level-progress-badge-title {
+    font-size: $fs-11;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+  }
+
+  .level-progress-badge-text {
+    margin-top: -3px;
+    font-size: $fs-28;
+    font-weight: $weight-bold;
+  }
+}
+
+/*---------------------------------
+    111. EXP LINE LIST
+---------------------------------*/
+.exp-line-list {
+  .exp-line {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    112. EXP LINE
+---------------------------------*/
+.exp-line {
+  display: flex;
+  align-items: center;
+  padding-right: 100px;
+  position: relative;
+
+  .exp-line-icon {
+    fill: $color-icon;
+    flex-shrink: 0;
+    margin-right: 18px;
+  }
+
+  .text-sticker {
+    flex-shrink: 0;
+    margin-right: 28px;
+  }
+
+  .exp-line-text {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    line-height: (20 / 14) * 1em;
+  }
+
+  .exp-line-timestamp {
+    color: $color-text-2;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+}
+
+/*---------------------------------
+    113. ACCOUNT STAT BOX
+---------------------------------*/
+.account-stat-box {
+  padding: 32px 28px 100px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  &.account-stat-active-users {
+    background: url('../img/graph/stat/07.png') no-repeat center bottom $color-box-background;
+    background-size: contain;
+
+    .account-stat-box-icon-wrap {
+      background-color: $color-account-stat-active-users;
+    }
+  }
+
+  &.account-stat-visits {
+    background: url('../img/graph/stat/08.png') no-repeat center bottom $color-box-background;
+    background-size: contain;
+
+    .account-stat-box-icon-wrap {
+      background-color: $color-account-stat-visits;
+    }
+  }
+
+  &.account-stat-session-duration {
+    background: url('../img/graph/stat/09.png') no-repeat center bottom $color-box-background;
+    background-size: contain;
+
+    .account-stat-box-icon-wrap {
+      background-color: $color-account-stat-session-duration;
+    }
+  }
+
+  &.account-stat-returning-visitors {
+    background: url('../img/graph/stat/10.png') no-repeat center bottom $color-box-background;
+    background-size: contain;
+
+    .account-stat-box-icon-wrap {
+      background-color: $color-account-stat-returning-visitors;
+    }
+  }
+
+  .percentage-diff {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+  }
+
+  .account-stat-box-icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0 auto;
+
+    .account-stat-box-icon {
+      fill: $white;
+    }
+  }
+
+  .account-stat-box-title {
+    margin-top: 24px;
+    font-size: $fs-48;
+    font-weight: $weight-bold;
+    text-align: center;
+  }
+
+  .account-stat-box-subtitle {
+    margin-top: 16px;
+    font-size: $fs-18;
+    font-weight: $weight-bold;
+    text-align: center;
+  }
+
+  .account-stat-box-text {
+    margin-top: 10px;
+    color: $color-text-2;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    line-height: (20 / 14) * 1em;
+    text-align: center;
+  }
+}
+
+/*---------------------------------
+    114. REFERENCE ITEM LIST
+---------------------------------*/
+.reference-item-list {
+  display: flex;
+
+  .reference-item {
+    margin-right: 32px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.centered {
+    justify-content: center;
+  }
+}
+
+/*---------------------------------
+    115. REFERENCE ITEM
+---------------------------------*/
+.reference-item {
+  display: flex;
+  align-items: center;
+
+  .reference-bullet {
+    margin-right: 6px;
+  }
+
+  .reference-item-text {
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+  }
+}
+
+/*---------------------------------
+    116. REFERENCE BULLET
+---------------------------------*/
+.reference-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+
+  &.secondary {
+    background-color: $color-reference-bullet-reactions;
+  }
+
+  &.blue {
+    background-color: $color-reference-bullet-shares;
+  }
+
+  &.light-blue {
+    background-color: $color-reference-bullet-replies;
+  }
+
+  &.primary {
+    background-color: $color-reference-bullet-comments;
+  }
+}
+
+/*---------------------------------
+    117. COUNTRY STAT LIST
+---------------------------------*/
+.country-stat-list {
+  .country-stat {
+    margin-bottom: 26px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    118. COUNTRY STAT
+---------------------------------*/
+.country-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  position: relative;
+
+  &.with-progress {
+    padding-left: 50px;
+
+    .country-stat-image {
+      width: 38px;
+      height: 26px;
+    }
+  }
+
+  .country-stat-image {
+    width: 20px;
+    height: 14px;
+    position: absolute;
+    top: -1px;
+    left: 0;
+  }
+
+  .country-stat-title,
+  .country-stat-text {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+}
+
+/*---------------------------------
+    119. FULL WIDTH IMAGE
+---------------------------------*/
+.full-width-image {
+  width: 100%;
+  height: auto;
+}
+
+/*---------------------------------
+    120. TOTALS LINE LIST
+---------------------------------*/
+.totals-line-list {
+  &.separator-bottom {
+    padding-bottom: 26px;
+    border-bottom: 1px solid $color-divider;
+  }
+
+  .totals-line {
+    margin-bottom: 26px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    121. TOTALS LINE
+---------------------------------*/
+.totals-line {
+  display: flex;
+  justify-content: space-between;
+
+  .totals-line-title {
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+
+    .bold {
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+  }
+
+  .totals-line-text {
+    margin-top: 4px;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+  }
+
+  .price-title {
+    flex-shrink: 0;
+  }
+}
+
+/*---------------------------------
+    122. UPLOAD BOX
+---------------------------------*/
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 140px;
+  padding-top: 32px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  cursor: pointer;
+  transition: transform .2s ease-in-out, box-shadow .25s ease-in-out;
+
+  &:hover {
+    box-shadow: $shadow-dark;
+    transform: translate(0, -4px);
+
+    .upload-box-icon {
+      fill: $color-primary;
+    }
+  }
+
+  .upload-box-icon {
+    fill: $color-icon;
+    transition: fill .25s ease-in-out;
+  }
+
+  .upload-box-title {
+    margin-top: 26px;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+
+  .upload-box-text {
+    margin-top: 4px;
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+  }
+}
+
+/*---------------------------------
+    123. DRAGGABLE ITEMS
+---------------------------------*/
+.draggable-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 60px);
+  grid-gap: 24px;
+  justify-content: center;
+}
+
+/*---------------------------------
+    124. DRAGGABLE ITEM
+---------------------------------*/
+.draggable-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: $color-box-over-box-background;
+  box-shadow: $shadow;
+  cursor: pointer;
+
+  &.empty {
+    border: 2px dashed $color-divider;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: auto;
+  }
+}
+
+/*---------------------------------
+    125. SWITCH OPTION LIST
+---------------------------------*/
+.switch-option-list {
+  .switch-option {
+    margin-bottom: 26px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    126. SWITCH OPTION
+---------------------------------*/
+.switch-option {
+  position: relative;
+
+  .switch-option-title {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+
+  .switch-option-text {
+    margin-top: 4px;
+    color: $gray-dark;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    line-height: (20 / 14) * 1em;
+  }
+
+  .form-switch {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .button {
+    width: 260px;
+    margin-top: 32px;
+  }
+
+  .switch-option-meta {
+    color: $gray-dark;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    position: absolute;
+    bottom: 12px;
+    right: 0;
+
+    .bold {
+      color: $black;
+      font-weight: $weight-bold;
+    }
+  }
+}
+
+/*---------------------------------
+    127. NOTIFICATION BOX LIST
+---------------------------------*/
+.notification-box-list {
+  .notification-box {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------------------
+    128. NOTIFICATION BOX
+---------------------------------*/
+.notification-box {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+  padding: 22px 28px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  &.unread {
+    background-color: $color-box-background-alt;
+  }
+
+  &:hover {
+    .notification-box-close-button {
+      display: flex;
+    }
+
+    .mark-unread-button,
+    .mark-read-button {
+      display: block;
+    }
+  }
+
+  .user-status {
+    width: 100%;
+  }
+
+  .notification-box-close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    cursor: pointer;
+
+    .notification-box-close-button-icon {
+      fill: $color-icon-bold;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .notification-box-close-button,
+  .mark-unread-button,
+  .mark-read-button {
+    display: none;
+  }
+
+  .mark-unread-button,
+  .mark-read-button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  .mark-unread-button {
+    border: 2px solid $color-primary;
+  }
+
+  .mark-read-button {
+    background-color: $color-primary;
+  }
+}
+
+/*---------------------------------
+    129. CREATE ENTITY BOX
+---------------------------------*/
+.create-entity-box {
+  height: 284px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  &.v2 {
+    height: 360px;
+
+    .create-entity-box-cover {
+      height: 180px;
+    }
+
+    .create-entity-box-avatar {
+      background: url('../img/badge/badge-empty-02.png') no-repeat center;
+      top: 36px;
+    }
+
+    .create-entity-box-info {
+      padding-top: 28px;
+    }
+
+    .create-entity-box-title {
+      font-size: $fs-16;
+      text-align: left;
+    }
+
+    .create-entity-box-category {
+      margin-top: 8px;
+    }
+  }
+
+  .create-entity-box-cover {
+    height: 70px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 1px dashed $color-divider;
+    background-color: $color-box-background-alt;
+  }
+
+  .create-entity-box-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 110px;
+    background: url('../img/badge/badge-empty.png') no-repeat center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -50px;
+
+    &.primary {
+      .create-entity-box-avatar-icon {
+        fill: $color-primary;
+      }
+    }
+
+    .create-entity-box-avatar-icon {
+      fill: $color-secondary;
+    }
+  }
+
+  .create-entity-box-info {
+    padding: 60px 28px 0;
+  }
+
+  .create-entity-box-title {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    text-align: center;
+  }
+
+  .create-entity-box-category {
+    padding-left: 16px;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border: 2px solid $color-icon;
+      border-radius: 50%;
+      position: absolute;
+      top: 1px;
+      left: 0;
+    }
+  }
+
+  .create-entity-box-text {
+    margin-top: 6px;
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+    text-align: center;
+  }
+
+  .button {
+    margin-top: 36px;
+  }
+}
+
+/*---------------------------------
+    130. EARNING STAT BOX
+---------------------------------*/
+.earning-stat-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+  padding: 0 28px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  .earning-stat-box-info {
+    padding-left: 66px;
+    position: relative;
+  }
+
+  .earning-stat-box-icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .earning-stat-box-icon {
+      fill: $white;
+    }
+
+    &.stat-item {
+      background-color: $color-stat-item;
+    }
+
+    &.stat-earning {
+      background-color: $color-stat-earning;
+    }
+
+    &.stat-revenue {
+      background-color: $color-stat-revenue;
+    }
+
+    &.stat-balance {
+      background-color: $color-stat-balance;
+    }
+  }
+
+  .earning-stat-box-title {
+    font-size: $fs-28;
+    font-weight: $weight-bold;
+
+    .currency {
+      font-size: $fs-18;
+    }
+  }
+
+  .earning-stat-box-text {
+    margin-top: 2px;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+  }
+}
+
+/*---------------------------------
+    131. STATUS INFO
+---------------------------------*/
+.status-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.success {
+    .status-icon-wrap {
+      background-color: $color-primary;
+    }
+  }
+
+  .status-icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    .status-icon {
+      fill: $white;
+      width: 20px;
+      height: 16px; 
+    }
+  }
+
+  .status-title {
+    margin-top: 22px;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+
+  .status-text {
+    margin-top: 4px;
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+  }
+
+  .status-description {
+    margin-top: 28px;
+    color: $color-text-alt;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    line-height: (20 / 14) * 1em;
+    text-align: center;
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 1365px) {
+  .popup-picture {
+    .widget-box {
+      display: none;
+    }
+  }
+
+  .notification-box {
+    .notification-box-close-button {
+      display: flex;
+    }
+
+    .mark-unread-button,
+    .mark-read-button {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .week-box {
+    display: none;
+  }
+
+  .promo-line {
+    display: block;
+    padding: 32px 28px;
+
+    .promo-line-text {
+      width: auto;
+    }
+
+    .promo-line-actions {
+      margin-top: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .switch-option {
+    .form-switch {
+      margin-top: 12px;
+      position: relative;
+      top: auto;
+      right: auto;
+    }
+  
+    .button {
+      margin-top: 22px;
+    }
+  
+    .switch-option-meta {
+      margin-top: 16px;
+      position: static;
+    }
+  }
+
+  .earning-stat-box {
+    &.full {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .user-stats {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .achievement-box {
+    flex-direction: column;
+    padding: 28px 18px;
+
+    .button {
+      margin-top: 16px;
+    }
+  }
+
+  .level-progress-box {
+    display: block;
+    height: auto;
+    padding: 32px 28px;
+
+    .level-progress-badge {
+      margin: 0 auto;
+    }
+
+    .progress-stat {
+      margin-top: 28px;
+    }
+  }
+
+  .exp-line {
+    display: block;
+    padding: 32px 0 0;
+
+    .exp-line-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .text-sticker {
+      height: 24px;
+      padding: 0 12px;
+      line-height: 24px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .exp-line-timestamp {
+      margin-top: 8px;
+      position: static;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .post-option {
+    width: 80px;
+
+    .post-option-text {
+      display: none;
+    }
+
+    .post-option-icon {
+      margin-right: 0;
+    }
+  }
+
+  .reaction-options {
+    height: 40px;
+
+    .reaction-option {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .simple-tab-items {
+    border-bottom: none;
+    
+    .simple-tab-item {
+      display: none;
+    }
+
+    .form {
+      display: block;
+    }
+  }
+
+  .quick-post {
+    &.medium {
+      .quick-post-footer {
+        .quick-post-footer-actions {
+          .button {
+            width: 80px;
+  
+            &:last-child {
+              width: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .promo-line {
+    .promo-line-actions {
+      display: block;
+
+      .form-input,
+      .button {
+        width: 100%;
+      }
+
+      .form-input {
+        margin-right: 0;
+      }
+
+      .button {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .switch-option {
+    .button {
+      width: 100%;
+    }
+  }
+
+  .action-request {
+    &.with-text {
+      width: 40px;
+      padding: 0;
+
+      .action-request-icon {
+        margin-right: 0;
+      }
+  
+      .action-request-text {
+        display: none;
+      }
+    }
+  }
+}

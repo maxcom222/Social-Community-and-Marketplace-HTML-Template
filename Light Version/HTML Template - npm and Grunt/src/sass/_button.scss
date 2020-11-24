@@ -1,0 +1,176 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .button
+-------------------------------------------------------------------*/
+/*-----------------------
+    1. BUTTON
+-----------------------*/
+.button {
+  display: inline-block;
+  height: 48px;
+  border-radius: 10px;
+  background-color: $color-button-background;
+  color: $white;
+  font-size: $fs-14;
+  font-weight: $weight-bold;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out, color .2s ease-in-out, border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+  box-shadow: $color-button-shadow;
+
+  &.no-shadow {
+    box-shadow: none;
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+  &.medium {
+    height: 54px;
+    line-height: 54px;
+  }
+
+  &.small {
+    height: 40px;
+    font-size: $fs-12;
+    line-height: 40px;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $color-button-background-hover;
+  }
+
+  &.void {
+    background-color: transparent;
+    color: $color-text-alt-2;
+    box-shadow: none;
+
+    .button-icon {
+      fill: $color-icon;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $color-button-void-background-hover;
+
+      .button-icon {
+        fill: $white;
+      }
+    }
+
+    &.void-primary {
+      &:hover {
+        background-color: $color-primary-background;
+      }
+    }
+
+    &.void-secondary {
+      &:hover {
+        background-color: $color-secondary;
+      }
+    }
+  }
+
+  &.white-solid {
+    background-color: $white;
+    color: $black;
+  }
+
+  &.white {
+    background-color: transparent;
+    border: 1px solid $color-border;
+    color: $color-text-alt-2;
+    box-shadow: none;
+
+    .button-icon {
+      fill: $color-icon;
+    }
+    
+    &:hover {
+      color: $white;
+      background-color: $color-button-white-background-hover;
+      border-color: $color-button-white-background-hover;
+    }
+
+    &.white-tertiary {
+      &:hover {
+        background-color: $color-tertiary;
+        border-color: $color-tertiary;
+        box-shadow: $color-tertiary-shadow;
+      }
+    }
+  }
+
+  &.primary {
+    background-color: $color-primary-background;
+    box-shadow: $color-primary-shadow;
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+  }
+
+  &.secondary {
+    background-color: $color-secondary;
+    box-shadow: $color-secondary-shadow;
+
+    &:hover {
+      background-color: $color-secondary-hover;
+    }
+  }
+
+  &.tertiary {
+    background-color: $color-tertiary;
+    box-shadow: $color-tertiary-shadow;
+
+    &:hover {
+      background-color: $color-tertiary-hover;
+    }
+  }
+
+  &.twitch {
+    background-color: $color-twitch;
+    box-shadow: $color-twitch-shadow;
+
+    &:hover {
+      background-color: $color-twitch-hover;
+    }
+  }
+
+  &.twitter {
+    background-color: $color-twitter;
+    box-shadow: $color-twitter-shadow;
+
+    &:hover {
+      background-color: $color-twitter-hover;
+    }
+  }
+
+  &.add-field-button {
+    width: 128px;
+    margin-top: 40px;
+  }
+
+  &.padded {
+    padding: 0 24px;
+  }
+
+  .button-icon {
+    fill: $white;
+    transition: fill .2s ease-in-out;
+
+    &.spaced {
+      margin-right: 6px;
+    }
+  }
+
+  &.with-only-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

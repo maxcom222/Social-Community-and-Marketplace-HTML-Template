@@ -1,0 +1,223 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .post-preview
+2. .post-peek-list
+3. .post-peek
+4. .post-preview-line-list
+5. .post-preview-line
+-------------------------------------------------------------------*/
+/*----------------------
+    1. POST PREVIEW
+----------------------*/
+.post-preview {
+  min-height: 516px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  &.medium {
+   min-height: auto;
+   box-shadow: none;
+
+    .post-preview-image {
+      height: 320px;
+      border-radius: 0;
+    }
+
+    .post-preview-info {
+      width: (528/584)*100%;
+      margin-top: -140px;
+
+      .post-preview-title {
+        font-size: $fs-24;
+        line-height: (32 / 24) * 1em;
+      }
+
+      .post-preview-text {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  .post-preview-image {
+    height: 210px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .post-preview-info {
+    width: (352/384)*100%;
+    padding: 28px;
+    margin: -48px auto 0;
+    border-radius: 12px;
+    background-color: $color-box-over-box-background;
+    box-shadow: $shadow-alt-2;
+
+    &.fixed-height {
+      height: 292px;
+      padding: 28px 28px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .post-preview-text {
+        margin-top: 0;
+      }
+    }
+
+    .post-preview-timestamp {
+      color: $color-text-alt-2;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+    }
+
+    .post-preview-title {
+      margin-top: 10px;
+      font-size: $fs-20;
+      font-weight: $weight-bold;
+      line-height: (24 / 20) * 1em;
+    }
+
+    .post-preview-text {
+      margin-top: 16px;
+      @include paragraph();
+    }
+
+    .post-preview-link {
+      margin-top: 20px;
+      display: inline-block;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+      transition: color .2s ease-in-out;
+    }
+  }
+
+  .content-actions {
+    margin-top: 10px;
+    padding: 0 28px;
+  }
+}
+
+/*------------------------
+    1. POST PEEK LIST
+------------------------*/
+.post-peek-list {
+  .post-peek {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*-------------------
+    1. POST PEEK
+-------------------*/
+.post-peek {
+  min-height: 40px;
+  padding-left: 52px;
+  position: relative;
+
+  .post-peek-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .post-peek-title {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    line-height: (16 / 14) * 1em;
+    
+    a {
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+  }
+
+  .post-peek-text {
+    margin-top: 8px;
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+  }
+}
+
+/*----------------------------
+    POST PREVIEW LINE LIST
+----------------------------*/
+.post-preview-line-list {
+  .post-preview-line {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*------------------------
+    POST PREVIEW LINE
+------------------------*/
+.post-preview-line {
+  .post-preview-line-title {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    line-height: (16 / 14) * 1em;
+
+    a {
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+  }
+
+  .post-preview-line-meta {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .user-avatar {
+    margin-right: 8px;
+  }
+
+  .post-preview-line-author {
+    margin-right: 6px;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+
+    a {
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+  }
+
+  .post-preview-line-timestamp {
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 460px) {
+  .post-preview {
+    .post-preview-info {
+      &.fixed-height {
+        display: block;
+        height: auto;
+        padding: 28px;
+  
+        .post-preview-text {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

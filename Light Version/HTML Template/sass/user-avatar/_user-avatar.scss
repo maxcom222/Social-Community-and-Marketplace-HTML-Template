@@ -1,0 +1,388 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .user-avatar
+-------------------------------------------------------------------*/
+/*----------------------
+    1. USER AVATAR
+----------------------*/
+.user-avatar {
+  display: block;
+  width: 100px;
+  height: 110px;
+  position: relative;
+
+  &.online,
+  &.offline,
+  &.away {
+    &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border: 3px solid $color-box-background;
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      left: -2px;
+      z-index: 10;
+    }
+  }
+
+  &.online {
+    &::before {
+      background-color: $color-online;
+    }
+  }
+
+  &.offline {
+    &::before {
+      background-color: $color-offline;
+    }
+  }
+
+  &.away {
+    &::before {
+      background-color: $color-away;
+    }
+  }
+
+  &.big {
+    width: 148px;
+    height: 164px;
+
+    .user-avatar-content {
+      top: 27px;
+      left: 24px;
+    }
+
+    .user-avatar-progress,
+    .user-avatar-progress-border {
+      top: 14px;
+      left: 12px;
+    }
+
+    .user-avatar-badge {
+      width: 40px;
+      height: 44px;
+      top: 102px;
+      right: 8px;
+
+      .user-avatar-badge-content {
+        top: 5px;
+        left: 4px;
+      }
+
+      .user-avatar-badge-text {
+        font-size: $fs-16;
+      }
+    }
+  }
+
+  &.medium {
+    width: 120px;
+    height: 132px;
+
+    .user-avatar-content {
+      top: 21px;
+      left: 19px;
+    }
+
+    .user-avatar-progress,
+    .user-avatar-progress-border {
+      top: 11px;
+      left: 10px;
+    }
+
+    .user-avatar-badge {
+      width: 32px;
+      height: 36px;
+      top: 82px;
+      right: 7px;
+
+      .user-avatar-badge-content {
+        top: 4px;
+        left: 3px;
+      }
+
+      .user-avatar-badge-text {
+        font-size: $fs-14;
+      }
+    }
+  }
+
+  &.small {
+    width: 50px;
+    height: 56px;
+
+    .user-avatar-content {
+      top: 12px;
+      left: 10px;
+    }
+
+    .user-avatar-progress,
+    .user-avatar-progress-border {
+      top: 6px;
+      left: 5px;
+    }
+
+    .user-avatar-badge {
+      width: 22px;
+      height: 24px;
+      top: 27px;
+      right: 2px;
+
+      .user-avatar-badge-content {
+        top: 3px;
+        left: 3px;
+      }
+
+      .user-avatar-badge-text {
+        font-size: $fs-10;
+      }
+    }
+  }
+
+  &.smaller {
+    .user-avatar-overlay {
+      width: 30px;
+      height: 32px;
+    }
+
+    .user-avatar-overlay-content {
+      .user-avatar-overlay-content-text {
+        font-size: $fs-11;
+      }
+    }
+  }
+
+  &.no-stats {
+    width: 100px;
+    height: 108px;
+
+    .user-avatar-content {
+      top: 8px;
+      left: 8px;
+    }
+
+    &.big {
+      width: 148px;
+      height: 164px;
+
+      .user-avatar-content {
+        top: 14px;
+        left: 12px;
+      }
+    }
+
+    &.medium {
+      width: 120px;
+      height: 130px;
+
+      .user-avatar-content {
+        top: 10px;
+        left: 10px;
+      }
+    }
+
+    &.small {
+      width: 50px;
+      height: 56px;
+
+      .user-avatar-content {
+        top: 6px;
+        left: 5px;
+      }
+    }
+
+    &.smaller {
+      width: 34px;
+      height: 36px;
+  
+      .user-avatar-content {
+        top: 2px;
+        left: 2px;
+      }
+    }
+
+    &.micro {
+      width: 22px;
+      height: 24px;
+
+      .user-avatar-content {
+        top: 2px;
+        left: 2px;
+      }
+    }
+  }
+
+  &.no-border {
+    width: 84px;
+    height: 92px;
+
+    .user-avatar-content {
+      top: 0;
+      left: 0;
+    }
+
+    &.big {
+      width: 124px;
+      height: 136px;
+    }
+
+    &.medium {
+      width: 100px;
+      height: 110px;
+    }
+
+    &.small {
+      width: 40px;
+      height: 44px;
+    }
+
+    &.tiny {
+      width: 24px;
+      height: 26px;
+    }
+
+    &.micro {
+      width: 18px;
+      height: 20px;
+    }
+  }
+
+  &.no-outline {
+    width: 84px;
+    height: 92px;
+
+    .user-avatar-progress,
+    .user-avatar-progress-border {
+      top: 0;
+      left: 0;
+    }
+
+    .user-avatar-content {
+      top: 9px;
+      left: 8px;
+    }
+
+    .user-avatar-badge {
+      top: 60px;
+      right: -3px;
+    }
+
+    &.small {
+      width: 40px;
+      height: 44px;
+
+      .user-avatar-content {
+        top: 6px;
+        left: 5px;
+      }
+
+      .user-avatar-badge {
+        top: 21px;
+        right: -3px;
+      }
+    }
+  }
+
+  .user-avatar-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    .hexagon-content {
+      background-color: $white;
+    }
+  }
+
+  .user-avatar-content {
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    z-index: 3;
+  }
+
+  .user-avatar-progress,
+  .user-avatar-progress-border {
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    z-index: 2;
+  }
+
+  .user-avatar-progress {
+    z-index: 3;
+  }
+
+  .user-avatar-progress-border {
+    z-index: 2;
+  }
+
+  .user-avatar-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 32px;
+    position: absolute;
+    top: 68px;
+    right: 5px;
+    z-index: 4;
+
+    .user-avatar-badge-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 4;
+
+      .hexagon-content {
+        background-color: $white;
+      }
+    }
+
+    .user-avatar-badge-content {
+      position: absolute;
+      top: 4px;
+      left: 3px;
+      z-index: 5;
+    }
+
+    .user-avatar-badge-text {
+      color: $white;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      pointer-events: none;
+      position: relative;
+      z-index: 6;
+    }
+  }
+
+  .user-avatar-overlay {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 11;
+  }
+
+  .user-avatar-overlay-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+
+    .user-avatar-overlay-content-text {
+      color: $white;
+      font-weight: $weight-bold;
+      pointer-events: none;
+      position: relative;
+      top: 1px;
+    }
+  }
+}

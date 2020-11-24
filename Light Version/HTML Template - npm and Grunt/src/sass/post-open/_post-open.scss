@@ -1,0 +1,209 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .post-open
+-------------------------------------------------------------------*/
+/*--------------------
+    1. POST OPEN
+--------------------*/
+.post-open {
+  .post-open-cover {
+    width: 100%;
+    height: 560px;
+  }
+
+  .post-open-body {
+    width: 65%;
+    max-width: 784px;
+    margin: -220px auto 0;
+    padding-top: 90px;
+    border-radius: 12px;
+    background-color: $color-box-background;
+    box-shadow: $shadow-light;
+
+    .post-open-heading {
+      padding: 0 100px;
+
+      .post-open-timestamp {
+        color: $color-text-alt-2;
+        font-size: $fs-16;
+        font-weight: $weight-bold;
+        text-transform: uppercase;
+
+        .highlighted {
+          margin-right: 12px;
+          color: $color-text;
+        }
+      }
+
+      .post-open-title {
+        margin-top: 22px;
+        font-size: $fs-46;
+        font-weight: $weight-bold;
+        line-height: (44 / 46) * 1em;
+      }
+    }
+
+    .post-open-content {
+      display: flex;
+      margin-top: 70px;
+      padding: 0 100px;
+
+      .post-open-content-sidebar {
+        width: 84px;
+        flex-shrink: 0;
+
+        .post-open-sidebar-title {
+          width: 40px;
+          margin-top: 24px;
+          font-size: $fs-12;
+          font-weight: $weight-bold;
+          text-transform: uppercase;
+          text-align: center;
+        }
+
+        .social-links {
+          margin-top: 26px;
+        }
+      }
+
+      .post-open-content-body {
+        width: 500px;
+        padding-bottom: 80px;
+
+        .post-open-paragraph {
+          margin-top: 36px;
+          font-size: $fs-16;
+          font-weight: $weight-medium;
+          line-height: (32 / 16) * 1em;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+
+        .post-open-image {
+          width: 100%;
+          height: 320px;
+          margin-top: 50px;
+        }
+
+        .post-open-image-caption {
+          margin-top: 20px;
+          color: $color-text-alt;
+          @include paragraph();
+          text-align: center;
+        }
+
+        .tag-list {
+          margin-top: 60px;
+        }
+      }
+    }
+
+    & > .content-actions {
+      margin: 0 28px;
+      border-top: 1px solid $color-divider;
+    }
+
+    .post-options {
+      padding: 0 100px;
+    }
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 1366px) {
+  .post-open {
+    .post-open-body {
+      width: 95%;
+      max-width: 100%;
+
+      .post-open-content {
+        .post-open-content-sidebar {
+          width: 15%;
+        }
+
+        .post-open-content-body {
+          width: 85%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .post-open {
+    .post-open-body {
+      .post-open-heading {
+        padding: 0 40px;
+      }
+
+      .post-open-content {
+        padding: 0 40px;
+        margin-top: 40px;
+        flex-direction: column;
+
+        .post-open-content-sidebar,
+        .post-open-content-body {
+          width: 100%;
+        }
+
+        .post-open-content-sidebar {
+          margin-bottom: 60px;
+          display: flex;
+          align-items: center;
+
+          .post-open-sidebar-title {
+            width: auto;
+            margin: 0 0 0 16px;
+            line-height: 40px;
+            text-align: left;
+          }
+
+          .social-links {
+            margin: 0 0 0 26px;
+
+            &.vertical {
+              flex-direction: row;
+
+              .social-link {
+                margin: 0 16px 0 0;
+              }
+            }
+          }
+        }
+      }
+
+      .post-options {
+        padding: 0 28px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .post-open {
+    .post-open-cover {
+      height: 320px;
+    }
+
+    .post-open-body {
+      margin-top: -100px;
+      padding-top: 60px;
+
+      .post-open-heading,
+      .post-open-content {
+        padding: 0 28px;
+      }
+
+      .post-open-heading {
+        .post-open-title {
+          font-size: $fs-36;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .cart-item-preview
+2. .cart-preview-total
+-------------------------------------------------------------------*/
+/*----------------------------
+    1. CART ITEM PREVIEW
+----------------------------*/
+.cart-item-preview {
+  padding-left: 70px;
+  position: relative;
+
+  .cart-item-preview-image {
+    position: absolute;
+    top: 2px;
+    left: 0;
+  }
+
+  .cart-item-preview-title {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+
+    a {
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+  }
+
+  .cart-item-preview-text {
+    margin-top: 2px;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+  }
+
+  .cart-item-preview-price {
+    margin-top: 16px;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+
+    .highlighted {
+      color: $color-primary-dark;
+    }
+  }
+
+  .cart-item-preview-action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+    .icon-delete {
+      opacity: .4;
+      transition: fill .2s ease-in-out, opacity .2s ease-in-out;
+    }
+
+    &:hover {
+      .icon-delete {
+        fill: $color-icon-bold;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/*----------------------------
+    2. CART PREVIEW TOTAL
+----------------------------*/
+.cart-preview-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  padding: 0 28px 0 100px;
+  border-top: 1px solid $color-divider;
+  border-bottom: 1px solid $color-divider;
+
+  .cart-preview-total-title,
+  .cart-preview-total-text {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+
+  .cart-preview-total-text {
+    .highlighted {
+      color: $color-primary-dark;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .slider-panel
+2. .roster-pictures
+3. .roster-picture
+-------------------------------------------------------------------*/
+/*----------------------
+    1. SLIDER PANEL
+----------------------*/
+.slider-panel {
+  .slider-panel-slide {
+    width: 100%;
+    padding-top: 56.25%;
+    position: relative;
+  }
+
+  .slider-panel-slide-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .slider-panel-roster {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    margin-top: 16px;
+    padding: 0 46px 0 74px;
+    border-radius: 12px;
+    background-color: $color-box-background;
+    box-shadow: $shadow-light;
+    position: relative;
+
+    .slider-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 0 12px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      &::before,
+      &::after {
+        content: '';
+        width: 1px;
+        height: 20px;
+        background-color: $color-divider;
+        position: absolute;
+        top: 40px;
+      }
+
+      &::before {
+        left: 46px;
+      }
+
+      &::after {
+        display: none;
+        right: 46px;
+      }
+    }
+
+    .button {
+      width: 180px;
+      margin-right: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .roster-pictures {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+/*------------------------
+    2. ROSTER PICTURES
+------------------------*/
+.roster-pictures {
+  display: flex;
+  padding: 0 22px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 1px;
+    height: 20px;
+    background-color: $color-divider;
+    position: absolute;
+    top: 14px;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  .roster-picture {
+    margin-right: 28px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/*------------------------
+    3. ROSTER PICTURE
+------------------------*/
+.roster-picture {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  position: relative;
+
+  &.tns-nav-active {
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      border: 4px solid $color-secondary;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .roster-picture-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 1365px) {
+  .slider-panel {
+    .slider-panel-roster {
+      justify-content: center;
+
+      .roster-pictures {
+        display: none;
+      }
+
+      .slider-controls {
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .streamer-box
+-------------------------------------------------------------------*/
+/*----------------------
+    1. STREAMER BOX
+----------------------*/
+.streamer-box {
+  background-color: $color-box-background;
+  border-radius: 12px;
+  box-shadow: $shadow-light;
+
+  &.small {
+    .streamer-box-cover {
+      height: 48px;
+    }
+
+    .streamer-box-info {
+      .streamer-box-image {
+        top: -26px;
+      }
+
+      .streamer-box-title {
+        font-size: $fs-16;
+      }
+
+      .button {
+        margin-top: 28px;
+
+        & + {
+          .button {
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .streamer-box-cover {
+    width: 100%;
+    height: 70px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+  }
+
+  .streamer-box-info {
+    padding: 50px 28px 32px;
+    text-align: center;
+    position: relative;
+
+    .streamer-box-image {
+      width: 72px;
+      height: 72px;
+      border: 6px solid $color-box-background;
+      border-radius: 50%;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      margin-left: -36px;
+    }
+
+    .streamer-box-title {
+      font-size: $fs-18;
+      font-weight: $weight-bold;
+    }
+
+    .streamer-box-text {
+      margin-top: 4px;
+      color: $color-text-2;
+      font-size: $fs-12;
+      font-weight: $weight-medium;
+    }
+
+    .streamer-box-status {
+      margin-top: 10px;
+      display: inline-block;
+      height: 18px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: $color-text-alt-2;
+      color: $white;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      line-height: 18px;
+      text-transform: uppercase;
+
+      &.active {
+        background-color: $color-stream-live;
+      }
+    }
+
+    .user-stats {
+      margin-top: 38px;
+    }
+
+    .button {
+      margin-top: 40px;
+      width: 100%;
+    }
+  }
+}

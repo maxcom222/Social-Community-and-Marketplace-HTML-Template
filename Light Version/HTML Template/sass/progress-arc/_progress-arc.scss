@@ -1,0 +1,131 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .progress-arc-wrap
+2. .progress-arc-block
+3. .progress-arc-summary
+-------------------------------------------------------------------*/
+/*----------------------------
+    1. PROGRESS ARC WRAP
+----------------------------*/
+.progress-arc-wrap {
+  width: 140px;
+  height: 140px;
+  position: relative;
+
+  &.small {
+    width: 80px;
+    height: 80px;
+
+    .progress-arc-info {
+      .progress-arc-title {
+        font-size: $fs-22;
+      }
+    }
+  }
+
+  &.tiny {
+    width: 60px;
+    height: 60px;
+
+    .progress-arc-info {
+      .progress-arc-title {
+        font-size: $fs-12;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .progress-arc {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .progress-arc-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    .progress-arc-title {
+      font-size: $fs-36;
+      font-weight: $weight-bold;
+    }
+  
+    .progress-arc-text {
+      margin-top: 2px;
+      color: $color-text-alt-2;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/*----------------------------
+    2. PROGRESS ARC BLOCK
+----------------------------*/
+.progress-arc-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .progress-arc-block-info {
+    margin-top: 20px;
+    text-align: center;
+
+    .progress-arc-block-title {
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+    }
+
+    .progress-arc-block-text {
+      margin-top: 6px;
+      color: $color-text-alt-2;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/*------------------------------
+    3. PROGRESS ARC SUMMARY
+------------------------------*/
+.progress-arc-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .progress-arc-summary-info {
+    margin-top: 36px;
+    text-align: center;
+
+    .progress-arc-summary-title {
+      font-size: $fs-18;
+      font-weight: $weight-bold;
+    }
+  
+    .progress-arc-summary-subtitle {
+      margin-top: 6px;
+      color: $color-text-alt;
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+    }
+  
+    .progress-arc-summary-text {
+      margin-top: 22px;
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+      line-height: (20 / 14) * 1em;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. GENERAL
+-------------------------------------------------------------------*/
+/*-----------------
+    1. GENERAL
+-----------------*/
+* {
+  &::selection {
+    color: $white;
+    background-color: $color-text-selection;
+  }
+}
+
+body {
+  font-size: 16px;
+  background-color: $color-body;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4,
+h5, h6, a, p {
+  color: $color-text;
+  font-family: $font-primary;
+  line-height: 1em;
+}
+
+h1, h2, h3, h4,
+h5, h6 {
+  font-weight: $weight-bold;
+}
+
+p {
+  a {
+    color: $color-text-link;
+    font-weight: $weight-semibold;
+  }
+
+  .reaction {
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+    position: relative;
+    top: -2px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+a {
+  &:hover {
+    color: $color-text-link;
+    text-decoration: none;
+  }
+}
+
+figure {
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 480px) {
+  .hide-text-mobile {
+    display: none;
+  }
+}

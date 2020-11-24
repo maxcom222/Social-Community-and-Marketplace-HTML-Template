@@ -1,0 +1,839 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .section
+2. .section-header
+3. .section-header-info
+4. .section-header-actions
+5. .section-filters-bar
+6. .section-pager-bar-wrap
+7. .section-pager-bar
+8. .section-pager
+9. .section-results-text
+10. .section-banner
+-------------------------------------------------------------------*/
+/*---------------------
+    1. SECTION
+---------------------*/
+.section {
+  .section-filters-bar {
+    margin-top: 30px;
+  }
+}
+
+/*-----------------------
+    2. SECTION HEADER
+-----------------------*/
+.section-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*-----------------------------
+    3. SECTION HEADER INFO
+-----------------------------*/
+.section-header-info {
+  .section-pretitle {
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-semibold;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    margin-top: 8px;
+    font-size: $fs-26;
+    font-weight: $weight-bold;
+
+    .highlighted {
+      color: $color-primary-dark;
+
+      &.secondary {
+        color: $color-secondary;
+      }
+    }
+
+    &.pinned {
+      &::before {
+        content: 'pinned';
+        display: inline-block;
+        margin-right: 12px;
+        padding: 4px 8px;
+        border-radius: 200px;
+        background-color: $color-primary-background;
+        color: $white;
+        font-size: $fs-12;
+        font-weight: $weight-bold;
+        line-height: 1em;
+        text-transform: uppercase;
+        position: relative;
+        top: -4px;
+      }
+    }
+  }
+}
+
+/*--------------------------------
+    4. SECTION HEADER ACTIONS
+--------------------------------*/
+.section-header-actions {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4px;
+
+  .section-header-action {
+    color: $color-text-alt-2;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    cursor: pointer;
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: $color-text;
+    }
+
+    & + {
+      .section-header-action {
+        margin-left: 32px;
+      }
+    }
+  }
+
+  .slider-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+  }
+
+  .section-header-subsection {
+    color: $color-text;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+
+    &:last-child {
+      color: $color-text-alt-2;
+    }
+
+    & + {
+      .section-header-subsection {
+        margin-left: 26px;
+        position: relative;
+
+        &::before {
+          content: '';
+          width: 2px;
+          height: 10px;
+          background-color: $color-primary;
+          position: absolute;
+          top: 2px;
+          left: -13px;
+        }
+      }
+    }
+  }
+}
+
+/*------------------------------
+    5. SECTION FILTERS BAR
+------------------------------*/
+.section-filters-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96px;
+  padding: 0 28px;
+  border-radius: 12px;
+  box-shadow: $shadow-light;
+  background-color: $color-box-background;
+
+  .form {
+    & + {
+      .button {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &.centered {
+    justify-content: center;
+  }
+
+  &.v1 {
+    .form {
+      .form-select {
+        display: none;
+      }
+    }
+  }
+
+  &.v3 {
+    .form {
+      display: none;
+    }
+  }
+
+  &.v5 {
+    .section-filters-bar-actions {
+      &:first-child {
+        .form {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .section-filters-bar-actions {
+    display: flex;
+    align-items: center;
+
+    .form {
+      & + {
+        .filter-tabs {
+          margin-left: 80px;
+        }
+
+        .button {
+          flex-shrink: 0;
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
+  .form-input {
+    &.with-button {
+      width: 240px;
+
+      input {
+        padding-right: 82px;
+      }
+    }
+  }
+
+  .form-item {
+    &.split {
+      &.medium {
+        .button {
+          width: 180px;
+        }
+      }
+
+      .form-input-decorated {
+        width: 188px;
+
+        .form-input {
+          width: 100%;
+        }
+      }
+
+      .form-input,
+      .form-select {
+        width: 300px;
+      }
+
+      .form-select{
+        &.small {
+          width: 254px;
+        }
+      }
+
+      .button {
+        width: 64px;
+      }
+    }
+  }
+
+  .button {
+    width: 180px;
+  }
+
+  .filter-tabs {
+    height: 96px;
+  }
+
+  .section-filters-bar-title {
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+
+    a {
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+
+    .separator {
+      display: inline-block;
+      width: 2px;
+      height: 10px;
+      margin: 0 12px;
+      background-color: $color-primary;
+    }
+
+    & + {
+      .section-filters-bar-text {
+        margin-top: 8px;
+
+        &.small-space {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+
+  .section-filters-bar-text {
+    display: flex;
+    align-items: center;
+    font-family: $font-primary;
+    color: $color-text-2;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+
+    .bold {
+      font-weight: $weight-bold;
+
+      &:last-child {
+        margin-right: 4px;
+      }
+    }
+
+    .highlighted {
+      color: $color-primary-dark;
+      font-weight: $weight-bold;
+      margin: 0 4px;
+    }
+
+    .user-avatar {
+      margin: 0 4px;
+    }
+  }
+}
+
+/*--------------------------------
+    6. SECTION PAGER BAR WRAP
+--------------------------------*/
+.section-pager-bar-wrap {
+  margin-top: 32px;
+
+  &.align-right {
+    text-align: right;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+
+  .section-pager-bar {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+/*----------------------------
+    7. SECTION PAGER BAR
+----------------------------*/
+.section-pager-bar {
+  width: 494px;
+  height: 60px;
+  margin: 32px auto 0;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+  overflow: hidden;
+
+  .section-pager {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 60px;
+    z-index: 1;
+  }
+
+  .section-pager-controls {
+    .slider-control {
+      width: 60px;
+      height: 60px;
+      background-color: $color-box-background;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+
+      &.left {
+        left: 0;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+      }
+
+      &.right {
+        right: 0;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+    }
+  }
+}
+
+/*------------------------
+    8. SECTION PAGER
+------------------------*/
+.section-pager {
+  display: flex;
+  align-items: center;
+
+  &.secondary {
+    .section-pager-item {
+      &.active,
+      &:hover {
+        .section-pager-item-text {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+
+  .section-pager-item {
+    padding: 0 8px;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background-color: $color-divider;
+      position: absolute;
+      top: 12px;
+      left: 0;
+    }
+
+    &:last-child {
+      &::after {
+        content: '';
+        width: 1px;
+        height: 20px;
+        background-color: $color-divider;
+        position: absolute;
+        top: 12px;
+        right: 0;
+      }
+    }
+
+    &.active,
+    &:hover {
+      .section-pager-item-text {
+        background-color: $color-box-over-box-background;
+        color: $color-primary-dark;
+        box-shadow: $shadow-dark-alt;
+      }
+    }
+
+    .section-pager-item-text {
+      background-color: $color-box-background;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+      transition: color .2s ease-in-out, box-shadow .2s ease-in-out, background-color .2s ease-in-out;
+    }
+  }
+}
+
+/*------------------------------
+    9. SECTION RESULTS TEXT
+------------------------------*/
+.section-results-text {
+  margin-top: -12px;
+  color: $color-text-alt;
+  font-size: $fs-14;
+  font-weight: $weight-medium;
+}
+
+/*-------------------------
+    10. SECTION BANNER
+-------------------------*/
+.section-banner {
+  min-height: 160px;
+  padding: 52px 60px 0 200px;
+  border-radius: 12px;
+  background: url('../img/banner/banner-bg.png') no-repeat center;
+  position: relative;
+
+  .section-banner-icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .section-banner-title,
+  .section-banner-text {
+    color: $white;
+  }
+
+  .section-banner-title {
+    font-size: $fs-36;
+    font-weight: $weight-bold;
+  }
+
+  .section-banner-text {
+    margin-top: 10px;
+    font-size: $fs-16;
+    font-weight: $weight-medium;
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 1500px) {
+  .section-filters-bar {
+    &.v4 {
+      .form-item {
+        &.split {
+          .form-select {
+            &.small {
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .section-filters-bar {
+    &.v1,
+    &.v3,
+    &.v4,
+    &.v5,
+    &.v7 {
+      flex-direction: column;
+      height: auto;
+      padding: 32px 28px;
+    }
+
+    &.v1,
+    &.v3,
+    &.v5 {
+      .filter-tabs {
+        display: none;
+      }
+    }
+
+    &.v1,
+    &.v4,
+    &.v7 {
+      .section-filters-bar-actions {
+        margin-bottom: 40px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.v1 {
+      .section-filters-bar-actions {
+        .form {
+          display: flex;
+
+          .form-select {
+            display: block;
+            width: 254px;
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+
+    &.v3 {
+      .form {
+        display: block;
+      }
+    }
+
+    &.v4 {
+      .section-filters-bar-actions {
+        margin-bottom: 40px;
+      }
+    }
+
+    &.v5 {
+      .section-filters-bar-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        &:first-child {
+          .form {
+            display: block;
+
+            .form-select {
+              margin-bottom: 24px;
+            }
+          }
+        }
+
+        .form-item {
+          &.split {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+
+            .form-select {
+              width: 100%;
+              margin: 0 0 24px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section-results-text {
+    margin-top: 24px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .section-filters-bar {
+    &.v1 {
+      .section-filters-bar-actions {
+        width: 100%;
+        justify-content: center;
+
+        .form {
+          display: block;
+
+          .form-input {
+            &.with-button {
+              width: 100%;
+            }
+          }
+
+          .form-select {
+            width: 100%;
+            margin: 24px 0 0 0;
+          }
+        }
+      }
+    }
+
+    &.v2 {
+      flex-direction: column;
+      height: auto;
+      padding: 32px 28px;
+
+      .form {
+        .form-item {
+          &.split {
+            flex-direction: column;
+            align-items: center;
+
+            .form-select {
+              width: 100%;
+              margin: 0 0 24px 0;
+            }
+          }
+        }
+      }
+    }
+
+    &.v4 {
+      .section-filters-bar-actions {
+        width: 100%;
+        margin-bottom: 0;
+
+        .form-item {
+          &.split {
+            flex-direction: column;
+            align-items: center;
+
+            .form-select,
+            .form-input {
+              width: 100%;
+              margin: 0 0 24px 0;
+            }
+          }
+        }
+
+        &:first-child {
+          .form-item {
+            &.split {
+              position: relative;
+
+              .form-input {
+                width: 100%;
+
+                input {
+                  padding-right: 82px;
+                }
+              }
+
+              .button {
+                position: absolute;
+                top: 0;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.v6 {
+      &.v6-2 {
+        .section-filters-bar-actions {
+          &:first-child {
+            .form-item {
+              &.split {
+                flex-direction: column;
+                position: relative;
+
+                .form-input-decorated {
+                  width: 100%;
+                }
+  
+                .form-input {
+                  width: 100%;
+  
+                  input {
+                    padding-right: 0;
+                  }
+                }
+  
+                .button {
+                  width: 180px;
+                  margin: 0 auto 16px;
+                  position: static;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      flex-direction: column;
+      height: auto;
+      padding: 32px 28px;
+
+      .section-filters-bar-actions {
+        width: 100%;
+        justify-content: center;
+
+        &:first-child {
+          .form-item {
+            &.split {
+              position: relative;
+
+              .form-input {
+                width: 100%;
+                margin-bottom: 24px;
+
+                input {
+                  padding-right: 82px;
+                }
+              }
+
+              .button {
+                position: absolute;
+                top: 0;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.v7 {
+      .section-filters-bar-actions {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+
+        .form {
+          & + {
+            .button {
+              margin-top: 24px;
+            }
+          }
+        }
+
+        .form-item {
+          &.split {
+            position: relative;
+
+            .form-input {
+              width: 100%;
+
+              input {
+                padding-right: 82px;
+              }
+            }
+
+            .button {
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section-pager-bar {
+    width: 306px;
+  }
+
+  .section-banner {
+    height: 86px;
+    min-height: auto;
+    padding: 18px 28px 0 108px;
+  
+    .section-banner-icon {
+      width: 92px;
+      height: 86px;
+    }
+  
+    .section-banner-title {
+      font-size: $fs-24;
+    }
+  
+    .section-banner-text {
+      margin-top: 6px;
+      font-size: $fs-12;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-filters-bar {
+    &.v2 {
+      .form-item {
+        &.split {
+          &.medium {
+            .button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .section-filters-bar-actions {
+      &:last-child {
+        .form-item {
+          &.split {
+            &.medium {
+              .button {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,916 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. GENERAL
+2. .form
+3. .form-row
+4. .form-item
+5. .form-input-decorated
+6. .form-input
+7. .form-title
+8. .form-textarea
+9. .form-select
+10. .checkbox-line
+11. .checkbox-wrap
+12. .form-link
+13 .form-text
+14. .interactive-input
+15. .form-add-items
+16. .form-rating-wrap
+17. .form-counter-wrap
+18. .form-counter
+19. .form-switch
+-------------------------------------------------------------------*/
+/*-----------------
+    1. GENERAL
+-----------------*/
+label,
+input[type="text"],
+input[type="password"],
+textarea,
+select,
+button {
+  font-family: $font-primary;
+}
+
+label {
+  display: block;
+  margin: 0;
+  color: $color-text;
+  line-height: 1em;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select,
+button {
+  width: 100%;
+  border-radius: 12px;
+  font-size: $fs-16;
+  font-weight: $weight-bold;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  background-color: $color-box-background;
+  border: 1px solid $color-border;
+  color: $color-text;
+  transition: border-color .2s ease-in-out;
+
+  &:focus {
+    border-color: $color-secondary;
+  }
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 54px;
+  padding: 0 18px;
+
+  &::placeholder {
+    color: $color-input-placeholder;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+  }
+}
+
+textarea {
+  padding: 14px 18px;
+  resize: none;
+
+  &::placeholder {
+    color: $color-input-placeholder;
+    font-weight: $weight-semibold;
+  }
+}
+
+/*--------------
+    2. FORM
+--------------*/
+.form {
+  width: 100%;
+
+  & + {
+    .button {
+      margin-top: 40px;
+    }
+  }
+}
+
+/*------------------
+    3. FORM ROW
+------------------*/
+.form-row {
+  width: 100%;
+
+  & + {
+    .form-row {
+      margin-top: 28px;
+    }
+  }
+
+  &.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .form-item {
+      width: auto;
+    }
+  }
+
+  &.split {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .form-item {
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      & > * {
+        margin-bottom: 28px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+/*------------------
+    4. FORM ITEM
+------------------*/
+.form-item {
+  width: 100%;
+
+  &.auto-width {
+    width: auto;
+  }
+
+  &.centered {
+    display: flex;
+    align-items: center;
+  }
+
+  &.split {
+    display: flex;
+
+    &.medium {
+      & > * {
+        margin-right: 16px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    & > * {
+      width: 100%;
+      margin-right: 12px;
+  
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/*------------------------------
+    5. FORM INPUT DECORATED
+------------------------------*/
+.form-input-decorated {
+  position: relative;
+
+  input[type="text"] {
+    padding-right: 60px;
+  }
+
+  .form-input-icon {
+    fill: $gray;
+    opacity: .6;
+    pointer-events: none;
+    position: absolute;
+    top: 14px;
+    right: 20px;
+  }
+}
+
+/*-------------------
+    6. FORM INPUT
+-------------------*/
+.form-input {
+  position: relative;
+
+  &.dark {
+    input[type="text"],
+    input[type="password"],
+    textarea {
+      border: none;
+      background-color: $color-secondary-dark;
+      color: $white;
+
+      &::placeholder {
+        color: $color-input-placeholder-dark;
+        opacity: .6;
+      }
+    }
+  }
+
+  &.social-input {
+    .social-link {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      pointer-events: none;
+    }
+
+    input {
+      padding-left: 64px;
+    }
+
+    label {
+      left: 64px;
+    }
+
+    &.active {
+      label {
+        left: 58px;
+      }
+    }
+  }
+
+  &.currency-decorated {
+    &::before {
+      content: '$';
+      color: $color-primary-dark;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+      position: absolute;
+      top: 12px;
+      left: 22px;
+      pointer-events: none;
+    }
+
+    input {
+      padding-left: 32px;
+    }
+  }
+
+  &.small {
+    label,
+    input,
+    textarea {
+      font-size: $fs-14;
+    }
+
+    label {
+      top: 16px;
+    }
+
+    input {
+      height: 48px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    button {
+      width: 64px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &.full {
+    height: 100%;
+
+    textarea {
+      height: 100%;
+    }
+  }
+
+  &.mid-textarea {
+    textarea {
+      height: 124px;
+    }
+  }
+
+  &.medium-textarea {
+    textarea {
+      height: 160px;
+    }
+  }
+
+  &.active {
+    label {
+      background-color: $color-box-background;
+      padding: 0 6px;
+      font-size: $fs-12;
+      top: -6px;
+      left: 12px;
+    }
+  }
+
+  label {
+    color: $color-text-alt-2;
+    font-size: $fs-16;
+    font-weight: $weight-semibold;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: all .3s ease-in-out;
+    pointer-events: none;
+  }
+}
+
+/*-------------------
+    7. FORM TITLE
+-------------------*/
+.form-title {
+  font-size: $fs-14;
+  font-weight: $weight-bold;
+}
+
+/*----------------------
+    8. FORM TEXTAREA
+----------------------*/
+.form-textarea {
+  position: relative;
+
+  textarea {
+    font-size: $fs-14;
+    padding: 26px 28px 0;
+  }
+
+  .form-textarea-limit-text {
+    padding: 0 28px;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+    opacity: .6;
+    text-align: right;
+  }
+}
+
+/*----------------------
+    9. FORM SELECT
+----------------------*/
+.form-select {
+  width: 100%;
+  height: 48px;
+  position: relative;
+
+  &.v2 {
+    width: auto;
+    height: auto;
+    
+    select {
+      width: auto;
+      height: auto;
+      padding-right: 20px;
+      border: none;
+      font-size: $fs-12;
+    }
+
+    .form-select-icon {
+      top: 10px;
+      right: 0;
+    }
+  }
+
+  select {
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    font-size: $fs-14;
+    cursor: pointer;
+  }
+
+  .form-select-icon {
+    fill: $color-icon-bold;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    pointer-events: none;
+  }
+
+  label {
+    padding: 0 6px;
+    background-color: $color-box-background;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-semibold;
+    position: absolute;
+    top: -8px;
+    left: 12px;
+    pointer-events: none;
+  }
+}
+
+/*------------------------
+    10. CHECKBOX LINE
+------------------------*/
+.checkbox-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  .checkbox-line-text {
+    color: $color-primary-dark;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+  }
+}
+
+/*------------------------
+    11. CHECKBOX WRAP
+------------------------*/
+.checkbox-wrap {
+  position: relative;
+
+  .checkbox-info {
+    margin-top: 12px;
+
+    .checkbox-info-text {
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+      line-height: (20 / 14) * 1em;
+    }
+  }
+
+  &.checkbox-rating {
+    .rating-list {
+      position: absolute;
+      top: 6px;
+      left: 34px;
+      pointer-events: none;
+    }
+
+    label {
+      padding-left: 104px;
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: none;
+
+    &:checked {
+      & + {
+        .checkbox-box {
+          background-color: $color-primary-background;
+          border-color: $color-primary-background;
+
+          &.round {
+            border: 6px solid $color-primary-background;
+            background-color: $color-box-background;
+          }
+
+          .icon-cross {
+            fill: $color-box-background;
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    padding-left: 34px;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    line-height: 22px;
+    cursor: pointer;
+  }
+
+  .checkbox-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    background-color: $color-box-background;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: border-color .2s ease-in-out, background-color .2s ease-in-out;
+
+    &.round {
+      border-radius: 50%;
+    }
+
+    .icon-cross {
+      fill: transparent;
+      transition: fill .2s ease-in-out;
+    }
+  }
+
+  &.small {
+    label {
+      padding-left: 24px;
+      font-size: $fs-12;
+      line-height: 16px;
+    }
+
+    .checkbox-box {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+
+      &.round {
+        border-radius: 50%;
+      }
+
+      .icon-cross {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}
+
+/*--------------------
+    12. FORM LINK
+--------------------*/
+.form-link {
+  color: $gray;
+  font-size: $fs-14;
+  font-weight: $weight-bold;
+  line-height: 22px;
+}
+
+/*--------------------
+    13. FORM TEXT
+--------------------*/
+.form-text {
+  @include paragraph;
+  font-weight: $weight-medium;
+}
+
+/*----------------------------
+    14. INTERACTIVE INPUT
+----------------------------*/
+.interactive-input {
+  width: 100%;
+  height: 52px;
+  position: relative;
+
+  &.dark {
+    input {
+      border: none;
+      background-color: $color-secondary-dark;
+      color: $white;
+
+      &::placeholder {
+        color: $color-input-placeholder-dark;
+        opacity: .6;
+      }
+    }
+
+    .interactive-input-icon-wrap {
+      .interactive-input-icon {
+        fill: $color-icon-dark;
+      }
+    }
+
+    .interactive-input-action {
+      &:hover {
+        .interactive-input-action-icon {
+          fill: $white;
+        }
+      }
+
+      .interactive-input-action-icon {
+        fill: $color-icon-dark;
+      }
+    }
+  }
+
+  &.small {
+    height: 48px;
+  }
+
+  &.active {
+    .interactive-input-action {
+      display: flex;
+    }
+
+    .interactive-input-icon {
+      display: none;
+    }
+  }
+
+  input {
+    height: 100%;
+    padding-right: 60px;
+  }
+
+  .interactive-input-icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+
+    &.actionable {
+      pointer-events: all;
+
+      .interactive-input-icon {
+        cursor: pointer;
+
+        &:hover {
+          fill: $color-text;
+          opacity: 1;
+        }
+      }
+    }
+
+    .interactive-input-icon {
+      fill: $color-icon;
+      opacity: .6;
+      transition: fill .2s ease-in-out, opacity .2s ease-in-out;
+    }
+  }
+
+  .interactive-input-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    display: none;
+
+    &:hover {
+      .interactive-input-action-icon {
+        fill: $color-text;
+        opacity: 1;
+      }
+    }
+
+    .interactive-input-action-icon {
+      fill: $color-icon;
+      opacity: .6;
+      pointer-events: none;
+      transition: fill .2s ease-in, opacity .2s ease-in;
+    }
+  }
+}
+
+/*----------------------------
+    15. FORM ADD ITEMS
+----------------------------*/
+.form-add-items {
+  .form-add-items-title {
+    color: $gray;
+    font-size: $fs-12;
+    font-weight: $weight-semibold;
+  } 
+  
+  .form-add-items-info {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+
+    .user-avatar-list {
+      margin-left: 14px;
+    }
+  }
+
+  .form-add-items-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: $color-primary;
+    cursor: pointer;
+
+    .form-add-items-button-icon {
+      pointer-events: none;
+    }
+  }
+}
+
+/*----------------------------
+    16. FORM RATING WRAP
+----------------------------*/
+.form-rating-wrap {
+  display: flex;
+  align-items: center;
+
+  label {
+    margin-right: 16px;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+}
+
+/*----------------------------
+    17. FORM COUNTER WRAP
+----------------------------*/
+.form-counter-wrap {
+  position: relative;
+
+  label {
+    padding: 0 6px;
+    background-color: $color-box-background;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-semibold;
+    position: absolute;
+    top: -6px;
+    left: 12px;
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+/*----------------------
+    18. FORM COUNTER
+----------------------*/
+.form-counter {
+  display: flex;
+  align-items: center;
+  width: 96px;
+  height: 48px;
+  padding: 0 40px 0 18px;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  position: relative;
+
+  &.with-currency {
+    padding-left: 30px;
+
+    &::before {
+      content: '$';
+      color: $color-primary-dark;
+      font-family: $font-primary;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+      position: absolute;
+      top: 13px;
+      left: 20px;
+    }
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+  .form-counter-value {
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+  }
+
+  .form-counter-control {
+    display: flex;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+
+    .form-counter-icon {
+      fill: $color-icon-bold;
+    }
+
+    &.form-counter-control-increase {
+      top: 10px;
+      
+      .form-counter-icon {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &.form-counter-control-decrease {
+      align-items: flex-end;
+      bottom: 10px;
+      
+      .form-counter-icon {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+/*----------------------
+    19. FORM SWITCH
+----------------------*/
+.form-switch {
+  display: flex;
+  align-items: center;
+  width: 52px;
+  height: 28px;
+  border: 1px solid $color-border;
+  border-radius: 200px;
+  background-color: $color-form-switch-background;
+  cursor: pointer;
+  position: relative;
+  transition: background-color .3s ease-in-out;
+
+  &.active {
+    background-color: $color-primary-background;
+
+    .form-switch-button {
+      left: 26px;
+    }
+  }
+
+  .form-switch-button {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: $white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left .3s ease-in-out;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 2px;
+      height: 8px;
+      background-color: $color-form-switch-button;
+      opacity: .2;
+      position: absolute;
+      top: 7px;
+    }
+
+    &::before {
+      left: 8px;
+    }
+
+    &::after {
+      right: 8px;
+    }
+  }
+}
+
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 960px) {
+  .form-row {
+    &.split {
+      display: block;
+
+      .form-item {
+        margin-bottom: 28px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        textarea {
+          height: 124px;
+        }
+      }
+    }
+  }
+
+  .form-item {
+    &.split {
+      &.join-on-mobile {
+        display: block;
+  
+        &.medium {
+          & > * {
+            margin-right: 0;
+          }
+        }
+    
+        & > * {
+          margin-right: 0;
+
+          &:last-child {
+            margin-top: 28px;
+          }
+        }
+      }
+    }
+  } 
+}

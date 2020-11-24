@@ -1,0 +1,138 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .album-preview
+2. .photo-preview
+-------------------------------------------------------------------*/
+
+/*----------------------
+    1. ALBUM PREVIEW
+----------------------*/
+.album-preview {
+  display: block;
+  height: 340px;
+  border-radius: 12px;
+  box-shadow: $shadow-light;
+  cursor: pointer;
+  position: relative;
+
+  .album-preview-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .text-sticker {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .album-preview-info {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: inset 0 -120px 50px -40px rgba(0, 0, 0, .8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 28px 26px;
+    position: relative;
+    z-index: 2;
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover {
+      box-shadow: inset 0 -120px 50px -40px $color-album-preview-shadow;
+    }
+
+    .album-preview-title,
+    .album-preview-text {
+      color: $white;
+    }
+
+    .album-preview-title {
+      font-size: $fs-16;
+      font-weight: $weight-bold;
+    }
+
+    .album-preview-text {
+      margin-top: 6px;
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+    }
+  }
+}
+
+/*----------------------
+    2. PHOTO PREVIEW
+----------------------*/
+.photo-preview {
+  display: block;
+  border-radius: 12px;
+  box-shadow: $shadow-light;
+  cursor: pointer;
+  position: relative;
+
+  &.small {
+    height: 184px;
+  }
+
+  &:hover {
+    .photo-preview-info {
+      opacity: 1;
+      visibility: visible;
+
+      .reaction-count-list {
+        .reaction-count {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .photo-preview-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .photo-preview-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-color: rgba(21, 21, 31, .96);
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+
+    .reaction-count-list {
+      .reaction-count {
+        transform: scale(0);
+        transition: transform .2s ease-in-out;
+
+        &:first-child {
+          transition-delay: .1s;
+        }
+
+        &:last-child {
+          transition-delay: .2s;
+        }
+      }
+    }
+  }
+}

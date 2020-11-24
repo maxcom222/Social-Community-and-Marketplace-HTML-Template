@@ -1,0 +1,57 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .badge-item-preview
+-------------------------------------------------------------------*/
+
+/*----------------------------
+    1. BADGE ITEM PREVIEW
+----------------------------*/
+.badge-item-preview {
+  display: flex;
+  height: 154px;
+  padding: 32px 28px 0;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  .badge-item-preview-image {
+    width: 82px;
+    height: 90px;
+    flex-shrink: 0;
+  }
+
+  .badge-item-preview-info {
+    padding-left: 24px;
+
+    .badge-item-preview-title {
+      font-size: $fs-18;
+      font-weight: $weight-bold;
+    }
+
+    .badge-item-preview-text {
+      margin-top: 8px;
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+      line-height: (20 / 14) * 1em;
+    }
+
+    .badge-item-preview-timestamp {
+      margin-top: 14px;
+      color: $color-text-alt-2;
+      font-size: $fs-12;
+      font-weight: $weight-medium;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 460px) {
+  .badge-item-preview {
+    height: auto;
+    padding-bottom: 32px;
+  }
+}

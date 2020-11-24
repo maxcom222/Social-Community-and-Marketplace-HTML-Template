@@ -1,0 +1,148 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .navigation-widget
+-------------------------------------------------------------------*/
+/*----------------------------
+    1. NAVIGATION WIDGET
+----------------------------*/
+.navigation-widget {
+  width: 300px;
+  padding-bottom: 40px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  .navigation-widget-close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: $color-navigation-widget-close-button;
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .navigation-widget-cover {
+    width: 100%;
+    height: 76px;
+  }
+
+  .navigation-widget-info-wrap {
+    padding: 32px 0 0 30px;
+    margin-bottom: 40px;
+
+    .navigation-widget-info {
+      min-height: 44px;
+      padding: 8px 0 0 50px;
+      position: relative;
+  
+      .user-avatar {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+  
+      .navigation-widget-info-title {
+        font-size: $fs-14;
+        font-weight: $weight-bold;
+
+        a {
+          color: $color-text;
+          font-weight: $weight-bold;
+        }
+      }
+  
+      .navigation-widget-info-text {
+        margin-top: 4px;
+        color: $color-text-alt;
+        font-size: $fs-12;
+        font-weight: $weight-medium;
+      }
+    }
+
+    .navigation-widget-info-button {
+      margin-top: 20px;
+      width: 140px;
+    }
+  }
+
+  .navigation-widget-section-title {
+    padding-left: 30px;
+    color: $color-text-alt-2;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+
+    &.space-top {
+      margin-top: 30px;
+    }
+
+    & + {
+      .menu {
+        margin-top: 26px;
+      }
+
+      .navigation-widget-section-link {
+        margin-top: 14px;
+      }
+    }
+  }
+
+  .navigation-widget-section-link {
+    display: block;
+    padding: 12px 30px;
+    font-size: $fs-14;
+    font-weight: $weight-bold;
+    transition: padding .2s ease-in-out, color .2s ease-in-out;
+
+    .highlighted {
+      float: right;
+      color: $color-primary-dark;
+    }
+
+    &:hover {
+      padding-left: 34px;
+    }
+
+    & + {
+      .navigation-widget-section-title {
+        margin-top: 46px;
+      }
+    }
+  }
+
+  .badge-list {
+    margin-top: 36px;
+  }
+
+  .user-stats {
+    margin-top: 44px;
+  }
+
+  .menu {
+    margin-top: 60px;
+
+    & + {
+      .navigation-widget-section-title {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &.closed {
+    width: 80px;
+    padding-top: 20px;
+
+    .user-avatar {
+      margin: 0 auto;
+    }
+
+    .menu {
+      margin-top: 26px;
+    }
+  }
+}

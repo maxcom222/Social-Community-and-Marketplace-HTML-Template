@@ -1,0 +1,467 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .user-preview
+-------------------------------------------------------------------*/
+/*----------------------
+    1. USER PREVIEW
+----------------------*/
+.user-preview {
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  &.fixed-height {
+    height: 140px;
+  }
+
+  &.fixed-height-medium {
+    height: 284px;
+  }
+
+  &.small {
+    .user-preview-cover {
+      height: 70px;
+    }
+
+    .user-preview-info {
+      .tag-sticker {
+        right: 16px;
+      }
+
+      .user-short-description {
+        .user-short-description-title {
+          font-size: $fs-18;
+
+          &.small {
+            font-size: $fs-14;
+          }
+        }
+    
+        .user-short-description-text {
+          font-size: $fs-11;
+
+          &.regular {
+            margin-top: 6px;
+            font-size: $fs-12;
+          }
+        }
+      }
+  
+      .user-stats,
+      .social-links {
+        margin-top: 36px;
+      }
+  
+      .user-preview-social-links-wrap {
+        width: 160px;
+        margin: 32px auto 0;
+      }
+    }
+  }
+
+  &.landscape {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding-left: 84px;
+    position: relative;
+
+    .user-preview-cover {
+      width: 84px;
+      height: 100%;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 12px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .user-preview-info {
+      width: 100%;
+      padding: 0 28px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .user-short-description {
+        width: 200px;
+
+        & + {
+          .user-stats {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .user-avatar-list {
+        & + {
+          .user-preview-actions {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .user-avatar-list,
+      .badge-list,
+      .user-preview-social-links-wrap,
+      .user-preview-actions,
+      .social-links {
+        margin-top: 0;
+      }
+
+      .social-links {
+        width: 168px;
+      }
+
+      .badge-list {
+        display: flex;
+
+        .badge-item {
+          margin-right: 8px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .user-preview-social-links-wrap {
+        width: 160px;
+        margin-left: 8px;
+      }
+
+      .user-preview-actions {
+        margin-top: 0;
+
+        .button,
+        .tag-sticker {
+          margin-right: 12px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        .tag-sticker {
+          position: static;
+        }
+
+        .button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 64px;
+          height: 44px;
+        }
+      }
+    }
+  }
+
+  .user-preview-cover {
+    height: 96px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+  }
+
+  .user-preview-info {
+    padding: 0 28px 32px;
+    position: relative;
+
+    .tag-sticker {
+      position: absolute;
+      top: -12px;
+      right: 28px;
+    }
+    
+    .user-short-description {
+      &.tiny {
+        .user-short-description-title {
+          font-size: $fs-14;
+        }
+
+        .user-short-description-text {
+          font-size: $fs-11;
+        }
+      }
+
+      .user-short-description-title {
+        font-size: $fs-20;
+      }
+  
+      .user-short-description-text {
+        font-size: $fs-12;
+      }
+
+      & + {
+        .user-stats {
+          margin-top: 30px;
+        }
+
+        .button {
+          margin-top: 34px;
+        }
+      }
+    }
+  
+    .badge-list {
+      margin-top: 28px;
+    }
+
+    .user-preview-stats-slides {
+      margin-top: 40px;
+    }
+
+    .user-preview-stats-roster {
+      position: absolute;
+      top: 22px;
+      right: 28px;
+    }
+
+    .user-preview-text {
+      width: 270px;
+      margin: -10px auto 0;
+      font-size: $fs-14;
+      font-weight: $weight-medium;
+      line-height: (20 / 14) * 1em;
+      text-align: center;
+    }
+
+    .social-links {
+      margin-top: 24px;
+    }
+
+    .user-preview-social-links-wrap {
+      height: 36px;
+      margin-top: 20px;
+      position: relative;
+
+      .user-preview-social-links {
+        padding-top: 4px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .slider-controls {
+        width: 234px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 10px;
+        left: -40px;
+        z-index: 1;
+      }
+    }
+
+    .user-avatar-list {
+      margin-top: 34px;
+
+      & + {
+        .user-preview-actions {
+          margin-top: 36px;
+        }
+      }
+    }
+
+    .user-preview-actions {
+      display: flex;
+      margin-top: 40px;
+
+      .button {
+        width: 100%;
+        margin-right: 16px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .button-icon {
+          fill: $white;
+        }
+
+        &.white {
+          .button-icon {
+            fill: $color-icon;
+          }
+
+          &:hover {
+            .button-icon {
+              fill: $white;
+            }
+          }
+        }
+
+        &.full {
+          width: 100%;
+
+          .button-icon {
+            position: relative;
+            left: -12px;
+          }
+        }
+      }
+    }
+  }
+
+  .user-preview-author {
+    padding-left: 26px;
+    position: relative;
+
+    .user-preview-author-image {
+      position: absolute;
+      top: 1px;
+      left: 0;
+    }
+
+    .user-preview-author-title {
+      font-size: $fs-10;
+      font-weight: $weight-medium;
+    }
+
+    .user-preview-author-text {
+      margin-top: 1px;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+
+      a {
+        color: $color-text;
+        font-weight: $weight-bold;
+      }
+    }
+  }
+
+  .user-preview-footer {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    border-top: 1px solid $color-divider;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: $color-box-background-alt;
+
+    &.padded {
+      height: auto;
+      padding: 16px 28px;
+    }
+
+    .user-preview-footer-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      border-right: 1px solid $color-divider;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &.full {
+        width: 100%;
+        padding: 0 28px;
+
+        .button {
+          width: 100%;
+        }
+      }
+
+      .button {
+        width: 64px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 1365px) {
+  .user-preview {
+    &.landscape {
+      .user-preview-info {
+        .badge-list {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .user-preview {
+    &.landscape {
+      .user-preview-info {
+        .social-links,
+        .user-preview-social-links-wrap,
+        .user-avatar-list {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .user-preview {
+    &.landscape {
+      .user-preview-info {
+        .user-stats {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .user-preview {
+    &.landscape {
+      padding-left: 60px;
+
+      .user-preview-cover {
+        width: 60px;
+      }
+
+      .user-preview-info {
+        height: 100%;
+        padding: 0 68px 0 0;
+
+        .user-short-description {
+          width: auto;
+        }
+
+        .user-preview-actions {
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 8px;
+          right: 12px;
+  
+          .button,
+          .tag-sticker {
+            width: 44px;
+            height: 40px;
+            margin: 0 0 4px 0;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .user-preview-info {
+      .user-preview-social-links-wrap {
+        width: 160px;
+        margin: 20px auto 0;
+      }
+
+      .user-preview-text {
+        width: 95%;
+      }
+    }
+  }
+}

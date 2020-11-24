@@ -1,0 +1,329 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. THEME COLORS
+    1.1 PRIMARY COLORS
+    1.2 SECONDARY COLORS
+    1.3 TERTIARY COLORS
+2. GENERAL COLORS
+    2.1 BODY COLORS
+    2.2 BOX COLORS
+    2.3 TEXT COLORS
+    2.4 TEXT SELECTION COLORS
+    2.5 LINK COLORS
+    2.6 ICON COLORS
+    2.7 BORDER COLORS
+    2.8 SHADOW COLORS
+    2.9 INPUT COLORS
+    2.10 BUTTON COLORS
+    2.11 PAGE LOADER
+    2.12 LOADER BAR
+3. COMPONENT COLORS
+    3.0 TAB SWITCH
+    3.1 FORM SWITCH
+    3.2 USER STATUS
+    3.3 VIDEO STATUS
+    3.4 SECTION MENU
+    3.5 CHAT WIDGET
+    3.6 NAVIGATION WIDGET
+    3.7 XM TOOLTIP TEXT
+    3.8 DROPDOWN LIST ITEM
+    3.9 PICTURE ITEM
+    3.10 TEXT STICKER
+    3.11 TAG STICKER
+    3.12 DATE STICKER
+    3.13 FORUM POST
+    3.14 ALBUM PREVIEW
+    3.15 PICTURE COLLAGE
+    3.16 STATUS COLORS
+    3.17 PATTERN COLORS
+    3.18 ACCOUNT STAT COLORS
+    3.19 STAT COLORS
+    3.20 ACTIVITY COLORS
+    3.21 CATEGORY COLORS
+    3.22 REFERENCE BULLET COLORS
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+                        1. THEME COLORS
+-------------------------------------------------------------------*/
+/*-------------------------
+    1.1 PRIMARY COLORS
+-------------------------*/
+$color-primary: #4ff461;
+$color-primary-background: #40d04f;
+$color-primary-dark: #4ff461;
+$color-primary-light: #4ff461;
+$color-primary-shadow: 4px 7px 12px 0 rgba(64, 208, 79, .2);
+$color-primary-hover: #4ae95b;
+
+/*---------------------------
+    1.2 SECONDARY COLORS
+---------------------------*/
+$color-secondary: #7750f8;
+$color-secondary-dark: #5538b5;
+$color-secondary-darker: #7750f8;
+$color-secondary-shadow: 4px 7px 12px 0 rgba(119, 80, 248, .2);
+$color-secondary-hover: #9668ff;
+
+/*---------------------------
+    1.3 TERTIARY COLORS
+---------------------------*/
+$color-tertiary: $red-dark-mid;
+$color-tertiary-shadow: 4px 7px 12px 0 rgba(253, 67, 80, .2);
+$color-tertiary-hover: #ff7882;
+
+/*-------------------------------------------------------------------
+                        2. GENERAL COLORS
+-------------------------------------------------------------------*/
+/*-----------------------
+    2.1 BODY COLORS
+-----------------------*/
+$color-body: #161b28;
+$color-body-underlay: #161b28;
+
+/*-----------------------
+    2.2 BOX COLORS
+-----------------------*/
+$color-box-background: #1d2333;
+$color-box-background-alt: #21283b;
+$color-box-over-box-background: $color-box-background-alt;
+$color-box-over-box-light-background: #293249;
+
+/*-----------------------
+    2.3 TEXT COLORS
+-----------------------*/
+$color-text: $white;
+$color-text-2: #9aa4bf;
+$color-text-3: $white;
+$color-text-alt: #9aa4bf;
+$color-text-alt-2: #9aa4bf;
+
+/*-------------------------------
+    2.4 TEXT SELECTION COLORS
+-------------------------------*/
+$color-text-selection: $color-primary-background;
+
+/*--------------------------
+    2.5 LINK COLORS
+--------------------------*/
+$color-text-link: $color-primary-dark;
+
+/*-----------------------
+    2.6 ICON COLORS
+-----------------------*/
+$color-icon: #616a82;
+$color-icon-dark: #9b7dff;
+$color-icon-bold: $white;
+$color-rating-icon: $color-icon;
+$color-rating-icon-dark: $color-icon;
+
+/*-----------------------
+    2.7 BORDER COLORS
+-----------------------*/
+$color-divider: #2f3749;
+$color-border: #3f485f;
+$color-border-dark: #9b7dff;
+
+/*-----------------------
+    2.8 SHADOW COLORS
+-----------------------*/
+$shadow: 3px 5px 20px 0 rgba(0, 0, 0, .1);
+$shadow-alt: 0 0 40px 0 rgba(0, 0, 0, .1);
+$shadow-alt-2: 3px 5px 40px 0 rgba(0, 0, 0, .1);
+
+$shadow-light: 0 0 40px 0 rgba(0, 0, 0, .06);
+$shadow-light-alt: 3px 5px 40px 0 rgba(0, 0, 0, .06);
+
+$shadow-dark: 0 0 40px 0 rgba(0, 0, 0, .12);
+$shadow-dark-alt: 3px 5px 20px 0 rgba(0, 0, 0, .12);
+$shadow-dark-alt-2: 2px 3px 10px 0 rgba(0, 0, 0, .12);
+$shadow-dark-alt-3: 0 0 60px 0 rgba(0, 0, 0, .12);
+
+$shadow-darker: 3px 5px 20px 0px rgba(0, 0, 0, .16);
+
+/*-----------------------
+    2.9 INPUT COLORS
+-----------------------*/
+$color-input-placeholder: $color-text-alt-2;
+
+/*------------------------------
+    2.10 BUTTON
+------------------------------*/
+$color-button-background: #293249;
+$color-button-background-hover: #323e5b;
+$color-button-shadow: 3px 5px 10px 0 rgba(0, 0, 0, .2);
+$color-button-white-background-hover: $color-primary-background;
+$color-button-void-background-hover: $color-primary-background;
+
+/*-----------------------
+    2.11 PAGE LOADER
+-----------------------*/
+$color-page-loader-background: $color-box-background;
+
+/*-----------------------
+    2.12 LOADER BAR
+-----------------------*/
+$color-loader-bar-1: #41d04f;
+$color-loader-bar-2: #50d551;
+$color-loader-bar-3: #67dc55;
+$color-loader-bar-4: #7de358;
+$color-loader-bar-5: #99eb5c;
+$color-loader-bar-6: #b1f35f;
+$color-loader-bar-7: #c7f962;
+$color-loader-bar-8: #d6fe65;
+
+/*-------------------------------------------------------------------
+                        3. COMPONENT COLORS
+-------------------------------------------------------------------*/
+/*---------------------------
+    3.0 TAB SWITCH
+---------------------------*/
+$color-tab-switch-border: #1d2333;
+$color-tab-switch-text: #1d2333;
+$color-tab-switch-active-text: $white;
+$color-tab-switch-active-background: #1d2333;
+
+/*---------------------------
+    3.1 FORM SWITCH
+---------------------------*/
+$color-form-switch-background: #2f3749;
+$color-form-switch-button: $color-box-background;
+
+/*-----------------------
+    3.2 USER STATUS
+-----------------------*/
+$color-user-status-text: $color-text-alt;
+
+/*-----------------------
+    3.3 VIDEO STATUS
+-----------------------*/
+$color-video-status-meta: $color-text;
+
+/*-------------------------
+    3.4 SECTION MENU
+-------------------------*/
+$color-section-menu-item-icon-primary-active: $color-primary;
+$color-section-menu-item-icon-secondary-active: $color-secondary;
+
+/*-------------------------
+    3.5 CHAT WIDGET
+-------------------------*/
+$color-chat-widget-message-hover: #293249;
+$color-chat-widget-close-button: $color-icon;
+$color-chat-widget-conversation-background: $color-box-background-alt;
+$color-chat-widget-speaker-message: #293249;
+
+/*---------------------------
+    3.6 NAVIGATION WIDGET
+---------------------------*/
+$color-navigation-widget-close-button: $color-icon;
+
+/*---------------------------
+    3.7 XM TOOLTIP TEXT
+---------------------------*/
+$color-tooltip-background: #293249;
+
+/*---------------------------
+    3.8 DROPDOWN LIST ITEM
+---------------------------*/
+$color-dropdown-list-item-hover: #293249;
+
+/*---------------------------
+    3.9 PICTURE ITEM
+---------------------------*/
+$color-picture-item-overlay: rgba(64, 208, 79, .9);
+
+/*---------------------------
+    3.10 TEXT STICKER
+---------------------------*/
+$color-text-sticker-background: #293249;
+$color-text-sticker-negative-background: $color-box-background;
+
+/*---------------------------
+    3.11 TAG STICKER
+---------------------------*/
+$color-tag-sticker-background: $color-secondary;
+$color-tag-sticker-icon: $white;
+$color-tag-sticker-icon-primary: $white;
+
+/*---------------------------
+    3.12 DATE STICKER
+---------------------------*/
+$color-date-sticker-day-background: #293249;
+
+/*-------------------------------
+    3.13 FORUM POST
+-------------------------------*/
+$color-forum-post-user-tag-background: $color-secondary;
+$color-forum-post-user-tag-organizer-background: $color-primary-background;
+
+/*------------------------------
+    3.14 ALBUM PREVIEW
+------------------------------*/
+$color-album-preview-shadow: rgba(64, 208, 79, .9);
+
+/*------------------------------
+    3.15 PICTURE COLLAGE
+------------------------------*/
+$color-picture-collage-overlay-background: rgba(64, 208, 79, .9);
+
+/*-------------------------
+    3.16 STATUS COLORS
+-------------------------*/
+$color-online: $color-primary-background;
+$color-away: $gray;
+$color-offline: $red;
+$color-stream-live: $red-darker;
+
+/*-------------------------
+    3.17 PATTERN COLORS
+-------------------------*/
+$color-pattern-1: #8560ff;
+$color-pattern-2: #08b8f1;
+$color-pattern-3: #00e2cb;
+$color-pattern-4: #66e273;
+
+/*-----------------------------
+    3.18 ACCOUNT STAT COLORS
+-----------------------------*/
+$color-account-stat-active-users: $color-pattern-1;
+$color-account-stat-visits: $color-pattern-2;
+$color-account-stat-session-duration: $color-pattern-3;
+$color-account-stat-returning-visitors: $color-pattern-4;
+
+/*-----------------------
+    3.19 STAT COLORS
+-----------------------*/
+$color-stat-item: $color-pattern-1;
+$color-stat-earning: $color-pattern-2;
+$color-stat-revenue: $color-pattern-3;
+$color-stat-balance: $color-pattern-4;
+
+/*--------------------------
+    3.20 ACTIVITY COLORS
+--------------------------*/
+$color-activity-reaction: $color-pattern-1;
+$color-activity-comment: $color-pattern-2;
+$color-activity-share: $color-pattern-3;
+$color-activity-update: $color-pattern-4;
+
+/*--------------------------
+    3.21 CATEGORY COLORS
+--------------------------*/
+$gradient-category-all: linear-gradient(to right, #7750f8, #84d2ff);
+$gradient-category-featured: linear-gradient(to right, #006fb5, #3af0d4);
+$gradient-category-digital: linear-gradient(to right, #009989, #4df960);
+$gradient-category-physical: linear-gradient(to right, #2f9a3a, #e9fc49);
+
+$color-category-all: $color-pattern-1;
+$color-category-featured: $color-pattern-2;
+$color-category-digital: $color-pattern-3;
+$color-category-physical: $color-pattern-4;
+
+/*------------------------------------
+    3.22 REFERENCE BULLET COLORS
+------------------------------------*/
+$color-reference-bullet-reactions: $color-secondary;
+$color-reference-bullet-comments: $color-primary;
+$color-reference-bullet-shares: $color-pattern-2;
+$color-reference-bullet-replies: $color-pattern-3;

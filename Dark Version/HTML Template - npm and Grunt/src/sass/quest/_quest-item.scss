@@ -1,0 +1,81 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .quest-item
+-------------------------------------------------------------------*/
+/*---------------------
+    1. QUEST ITEM
+---------------------*/
+.quest-item {
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  .quest-item-cover {
+    width: 100%;
+    height: 120px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+  }
+
+  .text-sticker {
+    position: absolute;
+    top: 10px;
+    right: -6px;
+  }
+
+  .quest-item-info {
+    padding: 44px 28px 0;
+    position: relative;
+  }
+
+  .quest-item-badge {
+    border: 6px solid $color-box-background;
+    border-radius: 50%;
+    position: absolute;
+    top: -28px;
+    left: 22px;
+  }
+
+  .quest-item-title {
+    font-size: $fs-18;
+    font-weight: $weight-bold;
+  }
+
+  .quest-item-text {
+    margin-top: 18px;
+    color: $color-text-2;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    line-height: (20 / 14) * 1em;
+  }
+
+  .progress-stat {
+    max-width: 228px;
+    margin-top: 48px;
+  }
+
+  .quest-item-meta {
+    display: flex;
+    align-items: center;
+    margin-top: 22px;
+    padding: 14px 0;
+    border-top: 1px solid $color-divider;
+
+    .quest-item-meta-info {
+      margin-left: 10px;
+    }
+
+    .quest-item-meta-title {
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+    }
+
+    .quest-item-meta-text {
+      color: $color-text-2;
+      font-size: $fs-10;
+      font-weight: $weight-medium;
+    }
+  }
+}

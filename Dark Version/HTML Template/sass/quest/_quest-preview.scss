@@ -1,0 +1,52 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .quest-preview-list
+2. .quest-preview
+-------------------------------------------------------------------*/
+/*----------------------------
+    1. QUEST PREVIEW LIST
+----------------------------*/
+.quest-preview-list {
+  .quest-preview {
+    margin-bottom: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*-----------------------
+    2. QUEST PREVIEW
+-----------------------*/
+.quest-preview {
+  .quest-preview-info {
+    padding: 2px 8px 0 42px;
+    position: relative;
+
+    .quest-preview-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .quest-preview-title {
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+    }
+
+    .quest-preview-text {
+      margin-top: 4px;
+      color: $color-text-2;
+      font-size: $fs-12;
+      font-weight: $weight-medium;
+      line-height: (16 / 12) * 1em;
+    }
+  }
+
+  .progress-stat {
+    margin-top: 16px;
+  }
+}

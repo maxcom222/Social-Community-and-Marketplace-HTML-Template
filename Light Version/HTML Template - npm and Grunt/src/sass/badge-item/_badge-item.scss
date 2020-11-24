@@ -1,0 +1,60 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .badge-item-stat
+-------------------------------------------------------------------*/
+
+/*--------------------------
+    1. BADGE ITEM STAT
+--------------------------*/
+.badge-item-stat {
+  padding: 32px 28px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  &.void {
+    padding: 20px 0 0;
+    box-shadow: none;
+  }
+
+  .text-sticker {
+    position: absolute;
+    top: 10px;
+    right: -6px;
+  }
+
+  .badge-item-stat-image-preview {
+    position: absolute;
+    top: 32px;
+    left: 28px;
+  }
+
+  .badge-item-stat-image {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .badge-item-stat-title {
+    margin-top: 36px;
+    font-size: $fs-18;
+    font-weight: $weight-bold;
+    text-align: center;
+  }
+
+  .badge-item-stat-text {
+    width: 180px;
+    margin: 16px auto 0;
+    color: $color-text-2;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    line-height: (20 / 14) * 1em;
+    text-align: center;
+  }
+
+  .progress-stat {
+    max-width: 204px;
+    margin: 54px auto 0;
+  }
+}

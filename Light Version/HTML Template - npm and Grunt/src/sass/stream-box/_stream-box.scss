@@ -1,0 +1,171 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .stream-box
+-------------------------------------------------------------------*/
+/*----------------------
+    1. STREAM BOX
+----------------------*/
+.stream-box {
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+  transition: border-radius .2s ease-in-out;
+
+  &.no-video-radius {
+    &:hover {
+      .stream-box-info {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+    }
+
+    .stream-box-video {
+      iframe {
+        border-radius: 0;
+      }
+    }
+  }
+
+  &.big {
+    &:hover {
+      .stream-box-info {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+    }
+
+    .stream-box-video {
+      width: 100%;
+      padding-top: 56.25%;
+      position: relative;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .stream-box-info {
+      padding: 28px 28px 28px 88px;
+
+      .stream-box-game-image {
+        width: 44px;
+        height: 60px;
+        position: absolute;
+        top: 28px;
+        left: 28px;
+      }
+
+      .stream-box-title {
+        font-size: $fs-18;
+      }
+    
+      .stream-box-category {
+        margin-top: 6px;
+        font-size: $fs-14;
+      }
+
+      .stream-box-views {
+        margin-top: 10px;
+        color: $color-text-alt;
+        font-size: $fs-14;
+        font-weight: $weight-medium;
+      }
+    }
+  }
+
+  .stream-box-video {
+    height: 160px;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+  }
+
+  .stream-box-image {
+    border-radius: 50%;
+    border: 4px solid $color-box-background;
+    position: absolute;
+    top: 138px;
+    left: 24px;
+    z-index: 3;
+  }
+
+  .stream-box-info {
+    padding: 22px 28px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    position: relative;
+    z-index: 2;
+    transition: border-radius .2s ease-in-out;
+
+    .stream-box-title {
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+
+      a {
+        color: $color-text;
+        font-weight: $weight-bold;
+      }
+    }
+  
+    .stream-box-text {
+      margin-top: 6px;
+      font-size: $fs-12;
+      font-weight: $weight-medium;
+
+      a {
+        color: $color-text-alt;
+        font-weight: $weight-medium;
+      }
+    }
+  
+    .stream-box-category {
+      margin-top: 14px;
+      font-size: $fs-12;
+      font-weight: $weight-semibold;
+    }
+  }
+
+  .stream-box-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 77px;
+    border-top: 1px solid $color-divider;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: $color-box-background-alt;
+    box-shadow: 0 0 40px 0 rgba(94, 92, 154, .06);
+    position: absolute;
+    bottom: -77px;
+    left: 0;
+    z-index: 9999;
+    transform: translate(0, -20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+  }
+
+  &:hover {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    .stream-box-info {
+      border-radius: 0;
+    }
+
+    .stream-box-meta {
+      transform: translate(0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

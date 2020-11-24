@@ -1,0 +1,149 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .content-actions
+2. .reaction-item-list
+3. .reaction-image
+4. .user-avatar-list
+-------------------------------------------------------------------*/
+/*--------------------------
+    1. CONTENT ACTIONS
+--------------------------*/
+.content-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+
+  .content-action {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/*-----------------------------
+    2. REACTION ITEM LIST
+-----------------------------*/
+.reaction-item-list {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+
+  &.small {
+    .reaction-item {
+      width: 20px;
+      height: 20px;
+
+      .reaction-image {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .reaction-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: $color-box-background;
+    margin-left: -6px;
+
+    .simple-dropdown {
+      .simple-dropdown-text {
+        &:first-child {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    & > {
+      .reaction-image {
+        cursor: pointer;
+      }
+    }
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+}
+
+/*-------------------------
+    3. REACTION IMAGE
+-------------------------*/
+.reaction-image {
+  width: 20px;
+  height: 20px;
+}
+
+/*---------------------------
+    4. USER AVATAR LIST
+---------------------------*/
+.user-avatar-list {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+
+  &.reverse {
+    flex-direction: row;
+    justify-content: flex-start;
+
+    &.medium {
+      .user-avatar {
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-left: -10px;
+        }
+      }
+    }
+  }
+
+  &.centered {
+    justify-content: center;
+  }
+
+  &.medium {
+    .user-avatar {
+      margin-left: -10px;
+
+      &:last-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .user-avatar {
+    margin-left: -8px;
+
+    .user-avatar-border {
+      z-index: 3;
+    }
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 479px) {
+  .content-actions {
+    .user-avatar-list {
+      display: none;
+
+      & + {
+        .meta-line-text {
+          display: none;
+        }
+      }
+    }
+  }
+}

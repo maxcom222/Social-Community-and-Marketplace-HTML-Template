@@ -1,0 +1,357 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .widget-box
+-------------------------------------------------------------------*/
+/*--------------------
+    1. WIDGET BOX
+--------------------*/
+.widget-box {
+  padding: 32px 28px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  &.no-padding {
+    padding: 0;
+
+    .widget-box-title {
+      padding: 32px 28px 0;
+    }
+  }
+
+  .widget-box-settings {
+    position: absolute;
+    top: 22px;
+    right: 19px;
+    z-index: 9999;
+  }
+
+  .widget-box-controls {
+    position: absolute;
+    top: 28px;
+    right: 22px;
+    z-index: 9999;
+    
+    .slider-controls {
+      display: flex;
+
+      .slider-control {
+        &:first-child {
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
+  .widget-box-actions {
+    display: flex;
+    justify-content: space-between;
+
+    .widget-box-action {
+      display: flex;
+
+      .reference-item-list {
+        position: relative;
+        top: -3px;
+      }
+
+      .form-select {
+        &.v2 {
+          top: -6px;
+        }
+      }
+    }
+  }
+
+  .widget-box-footer {
+    .reference-item-list {
+      margin-top: 12px;
+    }
+
+    .chart-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+      padding-left: 36px;
+    }
+  }
+
+  .widget-box-content-slider {
+    .reaction-stats {
+      & + {
+        .reaction-stats {
+          margin-top: 40px;
+        }
+      }
+    }
+
+    .badge-item-stat {
+      .text-sticker {
+        top: 32px;
+        right: 18px;
+      }
+    }
+  }
+
+  .widget-box-title {
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+
+    .highlighted {
+      color: $color-primary-dark;
+    }
+  }
+
+  .widget-box-text {
+    @include paragraph();
+
+    &.light {
+      color: $color-text-alt;
+    }
+  }
+
+  .widget-box-content {
+    margin-top: 36px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &.small-margin-top {
+      margin-top: 28px;
+    }
+
+    &.no-margin-top {
+      margin-top: 0;
+    }
+
+    &.padded-for-scroll {
+      height: 358px;
+      padding-bottom: 28px;
+
+      &.small {
+        height: 320px;
+      }
+
+      &.medium {
+        height: 676px;
+      }
+
+      .scroll-content {
+        padding: 0 28px;
+      }
+
+      .exp-line-list {
+        padding-top: 8px;
+      }
+    }
+
+    .paragraph {
+      & + {
+        .information-line-list {
+          margin-top: 24px;
+        }
+      }
+    }
+
+    .filters {
+      & + {
+        .user-status-list,
+        .post-preview-line-list {
+          margin-top: 24px;
+        }
+      }
+    }
+
+    .week-box {
+      &:last-child {
+        margin: 22px 0 -60px;
+      }
+    }
+
+    .calendar {
+      margin: 0 auto;
+    }
+
+    .calendar-events-preview {
+      margin-top: 24px;
+    }
+
+    .ordered-item-list {
+      margin-top: 18px;
+    }
+
+    .progress-arc-wrap {
+      margin: 0 auto;
+    }
+
+    .draggable-items {
+      & + {
+        .widget-box-text {
+          margin-top: 32px;
+        }
+      }
+    }
+
+    .user-stats {
+      margin-top: 36px;
+
+      &.reference {
+        .user-stat {
+          width: 100%;
+
+          &::after {
+            height: 40px;
+            top: 20px;
+          }
+        }
+      }
+
+      & + {
+        .user-stats {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+
+  .achievement-status-list {
+    margin-top: 50px;
+  }
+
+  .widget-box-status {
+    padding-top: 24px;
+    position: relative;
+
+    .widget-box-status-content {
+      padding: 0 28px;
+
+      .user-status {
+        font-family: $font-primary;
+        padding-right: 70px;
+
+        .user-status-title {
+          .user-avatar {
+            display: inline;
+            margin-right: 24px;
+          }
+        }
+      }
+    }
+
+    .user-status {
+      & + {
+        .widget-box-status-text {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .widget-box-status-text {
+      @include paragraph();
+
+      & + {
+        .widget-box-status-text {
+          margin-top: 26px;
+        }
+
+        .tag-list {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .widget-box-picture {
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .tag-sticker,
+    .text-sticker {
+      position: absolute;
+      top: -8px;
+      right: 68px;
+    }
+
+    .post-preview,
+    .quote-box {
+      margin-top: 28px;
+    }
+
+    .video-status,
+    .iframe-wrap,
+    .poll-box,
+    .picture-collage,
+    .widget-box {
+      margin-top: 24px;
+    }
+
+    .widget-box {
+      padding-bottom: 32px;
+    }
+
+    .tag-list {
+      margin-top: 28px;
+
+      &:first-child {
+        margin-top: 18px;
+      }
+    }
+
+    .content-actions {
+      margin-top: 28px;
+      border-top: 1px solid $color-divider;
+    }
+  }
+
+  .widget-box-button {
+    width: 100%;
+    margin-top: 32px;
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 1365px) {
+  .widget-box {
+    .widget-box-footer {
+      .chart-info {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .widget-box {
+    .widget-box-status {
+      & > .text-sticker {
+        .text-sticker-icon {
+          margin-right: 0;
+        }
+        
+        .text-sticker-content {
+          display: none;
+        }
+      }
+    }
+
+    .widget-box-actions {
+      .widget-box-action {
+        &:last-child {
+          .reference-item-list {
+            position: absolute;
+            top: 60px;
+            left: 28px;
+          }
+        }
+      }
+    }
+  }
+}

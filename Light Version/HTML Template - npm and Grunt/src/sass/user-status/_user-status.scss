@@ -1,0 +1,195 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .user-status-list
+2. .user-status
+-------------------------------------------------------------------*/
+/*-------------------------
+    1. USER STATUS LIST
+-------------------------*/
+.user-status-list {
+  .user-status {
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*---------------------
+    2. USER STATUS
+---------------------*/
+.user-status {
+  min-height: 44px;
+  padding: 2px 0 0 52px;
+  position: relative;
+
+  &.no-padding-top {
+    padding-top: 0;
+  }
+
+  &.notification {
+    padding-right: 60px;
+  }
+
+  &.request,
+  &.request-small {
+    .user-status-title {
+      margin-top: 2px;
+      line-height: (16 / 14) * 1em;
+    }
+
+    .user-status-text {
+      margin-top: 8px;
+    }
+  }
+
+  &.request-small {
+    padding-right: 48px;
+  }
+
+  &.request {
+    padding-right: 100px;
+  }
+
+  .user-status-avatar,
+  .user-status-activity {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .user-status-activity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    &.activity-reaction {
+      background-color: $color-activity-reaction;
+    }
+
+    &.activity-comment {
+      background-color: $color-activity-comment;
+    }
+
+    &.activity-share {
+      background-color: $color-activity-share;
+    }
+
+    &.activity-update {
+      background-color: $color-activity-update;
+    }
+
+    .user-status-activity-icon {
+      fill: $white;
+    }
+  }
+
+  .user-status-title {
+    color: $color-text;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+    line-height: (20 / 14) * 1em;
+
+    &.medium {
+      font-size: $fs-16;
+
+      & + {
+        .user-status-text {
+          margin-top: 2px;
+        }
+      }
+    }
+
+    .bold {
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+
+    .highlighted {
+      color: $color-primary-dark;
+      font-weight: $weight-semibold;
+    }
+  }
+
+  .user-status-timestamp {
+    margin-top: 10px;
+    color: $color-text-alt;
+    font-size: $fs-12;
+    font-weight: $weight-medium;
+
+    &.small-space {
+      margin-top: 4px;
+    }
+
+    &.floaty {
+      margin-top: 0;
+      position: absolute;
+      top: 7px;
+      right: 0;
+    }
+  }
+
+  .user-status-text {
+    margin-top: 4px;
+    color: $color-user-status-text;
+    font-size: $fs-14;
+    font-weight: $weight-medium;
+
+    &.small {
+      font-size: $fs-12;
+    }
+
+    &.small-space {
+      margin-top: 4px;
+    }
+
+    a {
+      color: $color-user-status-text;
+    }
+  }
+
+  .user-status-tag {
+    display: inline-block;
+    height: 20px;
+    padding: 0 8px;
+    border-radius: 200px;
+    background-color: $black;
+    color: $white;
+    font-size: $fs-12;
+    font-weight: $weight-bold;
+    line-height: 20px;
+    text-transform: uppercase;
+    position: relative;
+    top: -3px;
+
+    &.online {
+      background-color: $color-online;
+    }
+
+    &.offline {
+      background-color: $color-offline;
+    }
+
+    &.away {
+      background-color: $color-away;
+    }
+  }
+
+  .user-status-icon {
+    opacity: .4;
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+  
+  .action-request-list {
+    position: absolute;
+    top: 2px;
+    right: 0;
+  }
+}

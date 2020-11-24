@@ -1,0 +1,306 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .navigation
+2. .menu-main
+3. .menu
+4. .section-navigation
+5. .section-menu
+-------------------------------------------------------------------*/
+/*---------------------
+    1. NAVIGATION
+---------------------*/
+.navigation {
+  height: 80px;
+}
+
+/*---------------------
+    2. MENU MAIN
+---------------------*/
+.menu-main {
+  display: flex;
+
+  .menu-main-item {
+    position: relative;
+
+    .menu-main-item-link {
+      padding: 0 24px;
+      display: block;
+      color: $white;
+      font-size: $fs-12;
+      font-weight: $weight-bold;
+      line-height: 80px;
+      cursor: pointer;
+      transition: color .2s ease-in-out;
+
+      .icon-dots {
+        transition: fill .2s ease-in-out;
+      }
+    }
+
+    &:hover {
+      & > {
+        .menu-main-item-link {
+          color: $color-primary-light;
+  
+          .icon-dots {
+            fill: $color-primary-light;
+          }
+        }
+
+        .menu-main {
+          transform: translate(0, 0);
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+      }
+    }
+
+    .menu-main {
+      flex-flow: column;
+      width: 120px;
+      padding: 8px 0;
+      border-radius: 10px;
+      background-color: $color-secondary;
+      position: absolute;
+      top: 64px;
+      transform: translate(0, -40px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+
+      .menu-main-item {
+        .menu-main-item-link {
+          padding: 8px 0 8px 18px;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+}
+
+/*---------------
+    3. MENU
+---------------*/
+.menu {
+  &.small {
+    .menu-item {
+      &.active {
+        .menu-item-link {
+          &:hover {
+            padding-left: 0;
+          }
+        }
+      }
+
+      .menu-item-link {
+        padding-left: 0;
+
+        &:hover {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .menu-item {
+    padding: 0 16px;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.active {
+      .menu-item-link {
+        color: $white;
+        background-color: $color-primary-background;
+        box-shadow: $color-primary-shadow;
+
+        &:hover {
+          background-color: $color-primary-background;
+          color: $white;
+          padding-left: 62px;
+          box-shadow: $color-primary-shadow;
+  
+          .menu-item-link-icon {
+            fill: $white;
+          }
+        }
+        
+        .menu-item-link-icon {
+          fill: $white;
+        }
+      }
+    }
+
+    .menu-item-link {
+      display: block;
+      height: 48px;
+      padding-left: 62px;
+      border-radius: 12px;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+      line-height: 48px;
+      position: relative;
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        background-color: $color-box-over-box-light-background;
+        color: $color-text;
+        padding-left: 70px;
+        box-shadow: $shadow-dark-alt;
+
+        .menu-item-link-icon {
+          fill: $color-primary;
+        }
+      }
+
+      .menu-item-link-icon {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        pointer-events: none;
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+}
+
+/*-----------------------------
+    4. SECTION NAVIGATION
+-----------------------------*/
+.section-navigation {
+  height: 80px;
+  padding: 0 43px;
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+  position: relative;
+
+  .slider-controls {
+    .slider-control {
+      width: 43px;
+      height: 80px;
+      position: absolute;
+      top: 0;
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+  }
+}
+
+/*----------------------
+    5. SECTION MENU
+----------------------*/
+.section-menu {
+  height: 80px;
+  overflow: hidden;
+
+  &.secondary {
+    .section-menu-item {
+      &.active,
+      &:hover {
+        border-bottom: 4px solid $color-secondary;
+      }
+
+      &.active {
+        .section-menu-item-icon {
+          fill: $color-section-menu-item-icon-secondary-active;
+        }
+      }
+    }
+  }
+
+  &.medium {
+    .section-menu-item {
+      width: 160px;
+    }
+  }
+
+  .section-menu-item {
+    float: left;
+    width: 122px;
+    height: 80px;
+    position: relative;
+
+    &.active {
+      border-bottom: 4px solid $color-primary;
+
+      .section-menu-item-icon {
+        fill: $color-section-menu-item-icon-primary-active;
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      border-bottom: 4px solid $color-primary;
+
+      .section-menu-item-icon {
+        transform: translate(0, -20px);
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .section-menu-item-text {
+        transform: translate(0, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background-color: $color-divider;
+      position: absolute;
+      top: 30px;
+      right: 0;
+    }
+
+    &:first-child {
+      &::before {
+        content: '';
+        width: 1px;
+        height: 20px;
+        background-color: $color-divider;
+        position: absolute;
+        top: 30px;
+        left: 0;
+      }
+    }
+
+    .section-menu-item-icon {
+      fill: $color-icon;
+      opacity: .6;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      margin-left: -10px;
+      transition: opacity .25s ease-in-out, visibility .25s ease-in-out, transform .25s ease-in-out;
+    }
+
+    .section-menu-item-text {
+      width: 100%;
+      color: $color-text;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+      text-align: center;
+      position: absolute;
+      top: 34px;
+      transform: translate(0, 20px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease-in-out, visibility .25s ease-in-out, transform .25s ease-in-out;
+    }
+  }
+}

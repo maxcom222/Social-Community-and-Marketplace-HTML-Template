@@ -1,0 +1,87 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .sidebar
+-------------------------------------------------------------------*/
+/*-------------------
+    1. SIDEBAR
+-------------------*/
+.sidebar {
+  height: 100%;
+  padding-top: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+
+  &.right {
+    right: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+
+  &.navigation-widget {
+    padding-top: 0;
+    margin-top: 80px;
+    overflow-y: auto;
+    transition: transform .35s ease-in-out;
+
+    &.navigation-widget-mobile {
+      margin-top: 0;
+      z-index: 100000;
+    }
+
+    &.closed {
+      padding-top: 20px;
+      overflow-y: visible;
+    }
+
+    &.delayed {
+      transition-delay: .25s;
+    }
+
+    &.hidden {
+      transform: translate(-100%, 0);
+    }
+  }
+
+  &.chat-widget {
+    height: 100%;
+
+    &.chat-widget-overlay {
+      height: auto;
+
+      .chat-widget-form {
+        bottom: 0;
+      }
+    }
+
+    &.closed {
+      transform: translate(220px, 0);
+
+      .chat-widget-form {
+        bottom: 0;
+      }
+    }
+
+    &.hidden {
+      transform: translate(100%, 0);
+    }
+
+    .chat-widget-form,
+    .chat-widget-button {
+      position: absolute;
+      left: 0;
+      z-index: 9999;
+    }
+
+    .chat-widget-form {
+      bottom: 80px;
+    }
+
+    .chat-widget-button {
+      bottom: 0;
+    }
+  }
+}

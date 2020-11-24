@@ -1,0 +1,89 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .picture
+2. .picture-item-list
+3. .picture-item
+-------------------------------------------------------------------*/
+/*-------------------
+    1. PICTURE
+-------------------*/
+.picture {
+  width: 52px;
+  height: 52px;
+
+  &.round {
+    border-radius: 12px;
+
+    &.small,
+    &.tiny {
+      border-radius: 10px;
+    }
+  }
+
+  &.circle {
+    border-radius: 50%;
+  }
+
+  &.medium {
+    width: 60px;
+    height: 60px;
+  }
+
+  &.small {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.tiny {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/*----------------------------
+    2. PICTURE ITEM LIST
+----------------------------*/
+.picture-item-list {
+  display: grid;
+  justify-content: center;
+
+  &.small {
+    grid-template-columns: repeat(auto-fit, 52px);
+    grid-gap: 6px;
+  }
+}
+
+/*-----------------------
+    3. PICTURE ITEM
+-----------------------*/
+.picture-item {
+  cursor: pointer;
+  position: relative;
+
+  .picture-item-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-picture-item-overlay;
+
+    &.round {
+      border-radius: 12px;
+    }
+  
+    &.circle {
+      border-radius: 50%;
+    }
+
+    .picture-item-overlay-text {
+      color: $white;
+      font-size: $fs-14;
+      font-weight: $weight-bold;
+    }
+  }
+}

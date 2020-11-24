@@ -1,0 +1,75 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .loader-bars
+-------------------------------------------------------------------*/
+/*---------------------
+    1. LOADER BARS
+---------------------*/
+.loader-bars {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+
+  .loader-bar {
+    width: 4px;
+    height: 100%;
+    margin-right: 4px;
+    border-radius: 200px;
+    transform: scaleY(.2);
+    animation: loader-bars .5s infinite alternate ease-in;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:nth-child(1) {
+      background-color: $color-loader-bar-1;
+    }
+
+    &:nth-child(2) {
+      background-color: $color-loader-bar-2;
+      animation-delay: .1s;
+    }
+
+    &:nth-child(3) {
+      background-color: $color-loader-bar-3;
+      animation-delay: .2s;
+    }
+
+    &:nth-child(4) {
+      background-color: $color-loader-bar-4;
+      animation-delay: .3s;
+    }
+
+    &:nth-child(5) {
+      background-color: $color-loader-bar-5;
+      animation-delay: .4s;
+    }
+
+    &:nth-child(6) {
+      background-color: $color-loader-bar-6;
+      animation-delay: .5s;
+    }
+
+    &:nth-child(7) {
+      background-color: $color-loader-bar-7;
+      animation-delay: .6s;
+    }
+
+    &:nth-child(8) {
+      background-color: $color-loader-bar-8;
+      animation-delay: .7s;
+    }
+  }
+}
+
+@keyframes loader-bars {
+  0% {
+    transform: scaleY(.2);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}

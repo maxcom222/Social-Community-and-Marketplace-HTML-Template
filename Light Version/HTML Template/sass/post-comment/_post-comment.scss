@@ -1,0 +1,199 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .post-comment
+2. .post-comment-heading
+3. .post-comment-form
+4. .post-comment-list
+-------------------------------------------------------------------*/
+/*-----------------------
+    1. POST COMMENT
+-----------------------*/
+.post-comment {
+  padding: 26px 28px 28px 80px;
+  background-color: $color-box-background;
+  position: relative;
+
+  &.unread {
+    background-color: $color-box-background-alt;
+  }
+
+  &.reply-2 {
+    padding-left: 108px;
+
+    .user-avatar {
+      left: 56px;
+    }
+  }
+
+  .user-avatar {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+  }
+
+  .post-comment-text-wrap {
+    display: flex;
+    align-items: center;
+
+    .rating-list {
+      margin-right: 12px;
+    }
+  }
+
+  .post-comment-text {
+    @include paragraph;
+
+    .bold {
+      font-weight: $weight-bold;
+    }
+
+    .highlighted {
+      color: $color-primary-dark;
+      font-weight: $weight-bold;
+    }
+
+    .post-comment-text-author {
+      margin-right: 6px;
+      color: $color-text;
+      font-weight: $weight-bold;
+    }
+
+    &.user-tag {
+      &::after {
+        display: inline-block;
+        height: 20px;
+        padding: 0 8px;
+        border-radius: 200px;
+        color: $white;
+        font-size: $fs-12;
+        font-weight: $weight-bold;
+        line-height: 20px;
+        position: relative;
+        top: -1px;
+      }
+
+      &.purchased {
+        &::after {
+          content: 'Purchased!';
+          background-color: $color-secondary;
+        }
+      }
+
+      &.author {
+        &::after {
+          content: 'Author';
+          background-color: $color-primary-background;
+        }
+      }
+    }
+  }
+
+  .content-actions {
+    height: 20px;
+    margin-top: 14px;
+  }
+
+  .post-comment-form {
+    padding: 26px 0 0 30px;
+
+    .user-avatar {
+      left: -24px;
+    }
+  }
+}
+
+/*------------------------------
+    2. POST COMMENT HEADING
+------------------------------*/
+.post-comment-heading {
+  height: 53px;
+  background-color: $color-box-background;
+  font-size: $fs-12;
+  font-weight: $weight-bold;
+  line-height: 53px;
+  text-align: center;
+  cursor: pointer;
+
+  .highlighted {
+    color: $color-primary-dark;
+  }
+}
+
+/*---------------------------
+    3. POST COMMENT FORM
+---------------------------*/
+.post-comment-form {
+  padding: 26px 28px 26px 80px;
+  background-color: $color-box-background;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  position: relative;
+
+  &.bordered-top {
+    border-top: 1px solid $color-divider;
+  }
+
+  &.with-title {
+    padding-top: 80px;
+
+    .user-avatar {
+      top: 82px;
+    }
+  }
+
+  .post-comment-form-title {
+    font-size: $fs-16;
+    font-weight: $weight-bold;
+    position: absolute;
+    top: 32px;
+    left: 28px;
+  }
+
+  .user-avatar {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+  }
+}
+
+/*---------------------------
+    4. POST COMMENT LIST
+---------------------------*/
+.post-comment-list {
+  &.no-border-top {
+    & > {
+      .post-comment,
+      .post-comment-heading,
+      .post-comment-form {
+        &:first-child {
+          border-top: none;
+        }
+      }
+    }
+  }
+
+  & > {
+    .post-comment,
+    .post-comment-heading,
+    .post-comment-form {
+      border-top: 1px solid $color-divider;
+
+      &:last-child {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+    }
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 460px) {
+  .post-comment {
+    .content-actions {
+      height: auto;
+    }
+  }
+}

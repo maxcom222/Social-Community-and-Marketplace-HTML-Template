@@ -1,0 +1,72 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. FONTS
+2. WEIGHTS
+3. SIZES
+4. PARAGRAPH
+5. MIXINS
+-------------------------------------------------------------------*/
+/*-----------------
+    1. FONTS
+-----------------*/
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&display=swap');
+
+$font-primary: 'Rajdhani', sans-serif;
+$font-secondary: 'Titillium Web', sans-serif;
+
+/*-----------------
+    2. WEIGHTS
+-----------------*/
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+$weight-black: 900;
+
+/*-----------------
+    3. SIZES
+-----------------*/
+$base-size: 16;
+$fs-10: (10 / $base-size) * 1rem;
+$fs-11: (11 / $base-size) * 1rem;
+$fs-12: (12 / $base-size) * 1rem;
+$fs-14: (14 / $base-size) * 1rem;
+$fs-16: (16 / $base-size) * 1rem;
+$fs-18: (18 / $base-size) * 1rem;
+$fs-20: (20 / $base-size) * 1rem;
+$fs-22: (22 / $base-size) * 1rem;
+$fs-24: (24 / $base-size) * 1rem;
+$fs-26: (26 / $base-size) * 1rem;
+$fs-28: (28 / $base-size) * 1rem;
+$fs-32: (32 / $base-size) * 1rem;
+$fs-36: (36 / $base-size) * 1rem;
+$fs-46: (46 / $base-size) * 1rem;
+$fs-48: (48 / $base-size) * 1rem;
+$fs-60: (60 / $base-size) * 1rem;
+$fs-104: (104 / $base-size) * 1rem;
+$fs-253: (253 / $base-size) * 1rem;
+
+/*-----------------
+    4. PARAGRAPH
+-----------------*/
+$fs-paragraph: $fs-14;
+$lh-paragraph: (24 / 14) * 1em;
+$fs-paragraph-medium: $fs-18;
+$lh-paragraph-medium: (24 / 18) * 1em;
+
+/*-----------------
+    5. MIXINS
+-----------------*/
+@mixin paragraph($size: regular) {
+  @if $size == regular {
+    font-size: $fs-paragraph;
+    line-height: $lh-paragraph;
+    font-weight: $weight-medium;
+  } @else if $size == medium {
+    font-size: $fs-paragraph-medium;
+    line-height: $lh-paragraph-medium;
+    font-weight: $weight-medium;
+  }
+}

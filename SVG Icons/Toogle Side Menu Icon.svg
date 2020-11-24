@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Toogle_Side_Menu_Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+<g>
+	<g>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M7,0H2C0.896,0,0,0.895,0,2v5c0,1.104,0.896,2,2,2h5
+			c1.104,0,2-0.896,2-2V2C9,0.895,8.104,0,7,0z M7,7H2V2h5V7z M7,11H2c-1.104,0-2,0.896-2,1.999v5C0,19.104,0.896,20,2,20h5
+			c1.104,0,2-0.896,2-2.001v-5C9,11.896,8.104,11,7,11z M7,17.999H2v-5h5V17.999z M18,0h-5c-1.104,0-2,0.895-2,2v5
+			c0,1.104,0.896,2,2,2h5c1.104,0,2-0.896,2-2V2C20,0.895,19.104,0,18,0z M18,7h-5V2h5V7z M18,11h-5c-1.104,0-2,0.896-2,1.999v5
+			C11,19.104,11.896,20,13,20h5c1.104,0,2-0.896,2-2.001v-5C20,11.896,19.104,11,18,11z M18,17.999h-5v-5h5V17.999z"/>
+	</g>
+</g>
+</svg>

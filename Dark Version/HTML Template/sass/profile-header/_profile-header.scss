@@ -1,0 +1,294 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. .profile-header
+-------------------------------------------------------------------*/
+/*--------------------------
+    1. PROFILE HEADER
+--------------------------*/
+.profile-header {
+  border-radius: 12px;
+  background-color: $color-box-background;
+  box-shadow: $shadow-light;
+
+  &.v2 {
+    .profile-header-info {
+      height: 112px;
+
+      .user-short-description {
+        min-height: 164px;
+        padding: 84px 0 0 164px;
+        position: absolute;
+        left: 32px;
+        bottom: 0;
+
+        .user-short-description-avatar {
+          top: 0;
+          left: 0;
+          margin-left: 0;
+
+          &.user-short-description-avatar-mobile {
+            top: -54px;
+            margin-left: -60px;
+          }
+        }
+
+        .user-short-description-title,
+        .user-short-description-text {
+          text-align: left;
+        }
+      }
+
+      .user-stats {
+        left: auto;
+        top: 38px;
+        right: 164px;
+      }
+
+      .tag-sticker {
+        position: absolute;
+        top: -12px;
+        right: 28px;
+        display: none;
+      }
+
+      .profile-header-info-actions {
+        top: 32px;
+  
+        .profile-header-info-action {
+          &.button {
+            width: 58px;
+          }
+        }
+      }
+    }
+  }
+
+  .profile-header-cover {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 300px;
+  }
+
+  .profile-header-info {
+    height: 126px;
+    position: relative;
+
+    .user-short-description {
+      .user-short-description-avatar-mobile {
+        display: none;
+        top: -54px;
+        margin-left: -60px;
+      }
+    }
+
+    .profile-header-social-links-wrap {
+      width: 352px;
+      height: 44px;
+      margin: 0 auto;
+      position: absolute;
+      top: 54px;
+      right: 32px;
+
+      .profile-header-social-links {
+        padding-top: 4px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .slider-controls {
+        width: 234px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 10px;
+        left: -40px;
+        z-index: 1;
+      }
+    }
+
+    .user-stats {
+      position: absolute;
+      top: 54px;
+      left: 40px;
+    }
+
+    .profile-header-info-actions {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: -40px;
+      right: 32px;
+
+      .profile-header-info-action {
+        margin-right: 16px;
+
+        &.button {
+          width: 180px;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------
+    MEDIA QUERIES 
+--------------------*/
+@media screen and (max-width: 1365px) {
+  .profile-header {
+    .profile-header-cover {
+      height: 200px;
+    }
+
+    &.v2 {
+      .profile-header-info {
+        height: auto;
+
+        .user-short-description {
+          min-height: auto;
+          padding: 52px 0 0;
+          position: static;
+  
+          .user-short-description-avatar {
+            top: -116px;
+            left: 50%;
+            margin-left: -74px;
+          }
+  
+          .user-short-description-title,
+          .user-short-description-text {
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .profile-header-info {
+      height: auto;
+      padding-bottom: 32px;
+
+      .profile-header-social-links-wrap,
+      .user-stats,
+      .profile-header-info-actions {
+        position: static;
+      }
+
+      .profile-header-social-links-wrap {
+        margin-top: 32px;
+      }
+
+      .user-stats,
+      .profile-header-info-actions {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile-header {
+    .profile-header-cover {
+      height: 76px;
+    }
+
+    &.v2 {
+      .profile-header-info {
+        .user-short-description {
+          padding-top: 84px;
+        }
+
+        .user-stats {
+          .user-stat {
+            &:first-child {
+              display: none;
+            }
+
+            &:nth-last-child(2) {
+              &::after {
+                display: block;
+              }
+            }
+  
+            &:last-child {
+              display: block;
+            }
+          }
+        }
+
+        .tag-sticker {
+          display: flex;
+        }
+      }
+    }
+
+    .profile-header-info {
+      .user-short-description {
+        padding-top: 84px;
+
+        .user-short-description-avatar {
+          display: none;
+        }
+
+        .user-short-description-avatar-mobile {
+          display: block;
+        }
+
+        .user-short-description-title {
+          font-size: $fs-18;
+        }
+      
+        .user-short-description-text {
+          font-size: $fs-11;
+        }
+      }
+
+      .profile-header-social-links-wrap {
+        width: 160px;
+        height: 36px;
+        position: relative;
+        top: auto;
+        right: auto;
+
+        .social-link {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      .user-stats {
+        .user-stat {
+          &:nth-last-child(2) {
+            &::after {
+              display: none;
+            }
+          }
+
+          &:last-child {
+            display: none;
+          }
+
+          .user-stat-title {
+            font-size: $fs-14;
+          }
+
+          .user-stat-text {
+            font-size: $fs-11;
+          }
+        }
+      }
+
+      .profile-header-info-actions {
+        .profile-header-info-action {
+          &.button {
+            width: 114px;
+          }
+        }
+      }
+    }
+  }
+}
