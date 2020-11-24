@@ -1,12 +1,19 @@
 # Social-Community-and-Marketplace-HTML-Template
 ## Features
   HTML Template
+  
   PSDs Included
+  
   ILLUSTRATIONS INCLUDED!
+  
   Google Fonts
+  
   Bootstrap Compatible
+  
   Fully Responsive
+  
   PHOTOS NOT INCLUDED
+  
 ## Discover Tons of Widgets!
 We carefully crafted lots of widgets for you to have an incredible amount of customization options! Everything you may need like different post updates, badge boxes, about boxes, calendars, product boxes, media, quests, infographics, streams, discussions, blog posts and much more!
 
